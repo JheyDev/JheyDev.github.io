@@ -1754,16 +1754,55 @@ input, select, textarea {
 			width: 100%;
 		}
 
-		.image.avatar60 {
+		.image.avatar48 {
+			position: relative;
 			width: 60px;
 			height: 60px;
-			background: #f00;
+			background: none;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border-radius: 3px;
+			
+		}
+		
+		.image.avatar48 img{
+			background-image: url(https://godofwar.fandom.com/pt-br/wiki/Kratos?file=Kratos+GOW18.jpg);
+		}
+					
+		.image.avatar48::before, .image.avatar48::after {
+			content: "";
+			position: absolute;
+			z-index: -1;
+			width: calc(100% + 15px);
+			height: calc(100% + 15px);
+			background: linear-gradient(45deg,#ffff00,#00ff00,#0099ff,#001aff,#a200ff,#ff0055,
+			#ffff00,#00ff00,#0099ff,#001aff,#a200ff);
+			background-size: 300%;
+			border-radius: 60px;
+			animation: AnimarBorda 8s infinite linear alternate;
+		
+		}
+		
+		@keyframes AnimarBorda {
+		0% {
+			background-position: 0;
+		}
+		100% {
+			background-position: 300%;
+		  }
+		}
+		
+		.image.avatar48::after {
+			filter: blur(50px);
+		
 		}
 
-			.image.avatar60 img {
-				width: 60px;
-				height: 60px;
-			}
+		.image.avatar48 img {
+			width: 60px;
+			height: 60px;
+			border-radius: 50px;
+		}
 
 		.image.fit {
 			display: block;
@@ -1790,64 +1829,6 @@ input, select, textarea {
 				margin: 0 auto;
 				width: auto;
 			}
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
- 
-body {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	min-height: 100vh;
-	background: #000000;	
-}
-
-.caixa {
-	position: relative;
-	width: 60px;
-	height: 60px;
-	color: #9ececc;
-	background: rgb(0, 0, 0);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	border-radius: 3px;
-	font: bold 2em 'century gothic';
-}
-
-.caixa img{
-	background-image: url(https://godofwar.fandom.com/pt-br/wiki/Kratos?file=Kratos+GOW18.jpg);
-}
-			
-.caixa::before, .caixa::after {
-	content: "";
-	position: absolute;
-	z-index: -1;
-	width: calc(100% + 15px);
-	height: calc(100% + 15px);
-	background: linear-gradient(45deg,#ffff00,#00ff00,#0099ff,#001aff,#a200ff,#ff0055,#ff0000,
-	#ffff00,#00ff00,#0099ff,#001aff,#a200ff);
-	background-size: 300%;
-	border-radius: 8px;
-	animation: AnimarBorda 8s linear alternate infinite;
-
-}
-
-@keyframes AnimarBorda {
-0% {
-	background-position: 0;
-}
-100% {
-	background-position: 300%;
-  }
-}
-
-.caixa::after {
-	filter: blur(50px);
-
-}
 
 /* List */
 
