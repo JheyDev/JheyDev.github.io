@@ -175,7 +175,7 @@ input, select, textarea {
 	}
 
 		a:hover {
-			color: #E27689;
+			color: #76cce2;
 			border-bottom-color: rgba(255, 255, 255, 0);
 		}
 
@@ -1765,31 +1765,26 @@ input, select, textarea {
 			border-radius: 3px;
 			
 		}
-		
-		.image.avatar48 img{
-			background-image: url(https://godofwar.fandom.com/pt-br/wiki/Kratos?file=Kratos+GOW18.jpg);
-		}
-					
+				
 		.image.avatar48::before, .image.avatar48::after {
 			content: "";
 			position: absolute;
 			z-index: -1;
 			width: calc(100% + 15px);
 			height: calc(100% + 15px);
-			background: linear-gradient(45deg,#ffff00,#00ff00,#0099ff,#001aff,#a200ff,#ff0055,
-			#ffff00,#00ff00,#0099ff,#001aff,#a200ff);
+			background: linear-gradient(45deg,rgb(225, 20, 225),black,yellow);
 			background-size: 300%;
 			border-radius: 60px;
-			animation: AnimarBorda 8s infinite linear alternate;
+			animation: Animar 4s infinite linear;
 		
 		}
 		
-		@keyframes AnimarBorda {
+		@keyframes Animar {
 		0% {
-			background-position: 0;
+			transform: rotate(0deg);
 		}
 		100% {
-			background-position: 300%;
+			transform: rotate(360deg);
 		  }
 		}
 		
