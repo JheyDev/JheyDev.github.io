@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+ <title>Funny Front</title>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style> 
+*{
+        margin:0;
+        padding:0;
+        box-sizing: border-box;
+        font-family: arial;
+    }
+        .texto{
+            display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 7vh;
+        width: 15vw;
+            font-size: 20px;
+            text-transform: uppercase;
+
+            background: linear-gradient(45deg,red,orange,yellow,green,blue,rgb(66, 0, 128),rgb(241, 4, 142));
+            background-size: 400%,100%;
+            animation: degrade 15s linear infinite alternate;
+            
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        @keyframes degrade {
+            0% {
+                background-position-x: 0%;
+            }
+            100% {
+                background-position: 400%;
+            } 
+        }
+</style>
+</head>
+<body>
+    <div contenteditable="true" class="texto">
+        Você é Incrível
+    </div>
+    
+</body>
+</html>
