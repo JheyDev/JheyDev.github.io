@@ -1762,7 +1762,7 @@ input, select, textarea {
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			border-radius: 3px;
+			border-radius: 1px;
 			
 		}
 				
@@ -1772,7 +1772,7 @@ input, select, textarea {
 			z-index: -1;
 			width: calc(100% + 15px);
 			height: calc(100% + 15px);
-			background: linear-gradient(45deg,rgb(225, 20, 225),black,yellow);
+			background: linear-gradient(45deg,black,rgb(106, 106, 106));
 			background-size: 300%;
 			border-radius: 60px;
 			animation: Animar 4s infinite linear;
@@ -2203,7 +2203,7 @@ input, select, textarea {
 				}
 
 					#nav ul li a.active span:before {
-						color: #e27689;
+						color: #08c5d6;
 					}
 
 /* Footer */
@@ -2250,6 +2250,7 @@ input, select, textarea {
 			text-align: center;
 			background-image: url("images/overlay.png");
 		}
+		
 
 			#main > section.dark {
 				color: #ddd;
