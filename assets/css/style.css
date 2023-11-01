@@ -478,6 +478,7 @@ section {
 }
 
 .img-fluid {
+text-align: center;
   max-width: 90%;
     height: auto;
     border-radius: 30%;
