@@ -20,7 +20,7 @@ a {
 }
 
 a:hover {
-  color: #ed6606;
+  color: #065bed;
   text-decoration: none;
 }
 
@@ -37,7 +37,10 @@ h6 {
   background-color: black;
 }
 
-
+@font-face {
+  font-family: 'Mokoto';
+  src: url('../fonts/Mokoto-Glitch-Mark-2.woff') format('woff');
+}
 
 /*--------------------------------------------------------------
 # Back to top button
@@ -75,18 +78,26 @@ h6 {
 /*--------------------------------------------------------------
 # Preloader
 --------------------------------------------------------------*/
+/* Estilize o preloader e o GIF de carregamento */
 #preloader {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 9999;
-  overflow: hidden;
-  background: #000000;
+  width: 100%;
+  height: 100%;
+  background-color: transparent; /* Cor de fundo do preloader */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Garanta que esteja acima de todo o conteúdo */
 }
 
-#preloader:before {
+#preloader img {
+  width: 200px; /* Largura do GIF de carregamento */
+  height: auto;
+}
+
+/* #preloader:before {
   content: "";
   position: fixed;
   top: calc(50% - 30px);
@@ -108,7 +119,7 @@ h6 {
   100% {
     transform: rotate(360deg);
   }
-}
+} */
 
 /*--------------------------------------------------------------
 # Disable aos animation delay on mobile devices
@@ -140,7 +151,7 @@ h6 {
     background-color: transparent !important;
     border-right: 1px solid transparent;
     left: -300px;
-    
+
   }
 }
 
@@ -154,7 +165,7 @@ h6 {
 # Navigation Menu
 --------------------------------------------------------------*/
 /**
-* Desktop Navigation 
+* Desktop Navigation
 */
 .nav-menu {
   padding: 0;
@@ -182,10 +193,10 @@ h6 {
   transition: 0.3s;
   font-size: 15px;
   border-radius: 50px;
-  background: linear-gradient(#f68438,rgba(226, 0, 0, 0.579));  
+  background: linear-gradient(#f68438,rgba(226, 0, 0, 0.579));
   letter-spacing: 3px;
   -webkit-background-clip: text;
-      
+
   height: 56px;
   width: 100%;
   overflow: hidden;
@@ -221,7 +232,7 @@ h6 {
 .nav-menu .active,
 .nav-menu .active:focus,
 .nav-menu li:hover>a {
-  background: linear-gradient(#ffffff,rgba(226, 0, 0, 0.579));  
+  background: linear-gradient(#ffffff,rgba(226, 0, 0, 0.579));
   letter-spacing: 3px;
   -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -246,7 +257,7 @@ h6 {
 }
 
 /**
-* Mobile Navigation 
+* Mobile Navigation
 */
 .mobile-nav-toggle {
   position: fixed;
@@ -278,7 +289,7 @@ h6 {
 
 .mobile-nav-active .mobile-nav-toggle {
   color: #000000;
-  background-color: #63bb05;
+  background-color: #ff8000;
 }
 
 /*--------------------------------------------------------------
@@ -310,12 +321,12 @@ h6 {
 
 #hero h1 {
   margin: 0;
-  font-size: 64px;
+  font-size: 45px;
   font-weight: 700;
   line-height: 56px;
   color: #ffffff;
-  font-family: 'Poppins', sans-serif;
-  
+  font-family: 'Mokoto', sans-serif;
+
 }
 
 #hero p {
@@ -326,7 +337,7 @@ h6 {
 }
 
 #hero p span {
-  background: linear-gradient(#f68438,rgba(226, 0, 0, 0.579));  
+  background: linear-gradient(#f68438,rgba(226, 0, 0, 0.579));
   letter-spacing: 3px;
   -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -339,7 +350,7 @@ h6 {
 #hero .social-links a {
   font-size: 24px;
   display: inline-block;
-   background: linear-gradient(#f68438,rgba(226, 0, 0, 0.579));  
+   background: linear-gradient(#f68438,rgba(226, 0, 0, 0.579));
   letter-spacing: 3px;
   -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -349,7 +360,7 @@ h6 {
 }
 
 #hero .social-links a:hover {
-  background: linear-gradient(#ffffff,rgba(226, 0, 0, 0.579));  
+  background: linear-gradient(#ffffff,rgba(226, 0, 0, 0.579));
   letter-spacing: 3px;
   -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -406,7 +417,7 @@ section {
   margin-bottom: 20px;
   padding-bottom: 20px;
   position: relative;
-  background: linear-gradient(#f68438,rgba(246, 8, 8, 0.857));  
+  background: linear-gradient(#f68438,rgba(246, 8, 8, 0.857));
   letter-spacing: 3px;
   -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -444,7 +455,7 @@ section {
 .about .content h3 {
   font-weight: 700;
   font-size: 26px;
-  background: linear-gradient(#f68438,rgba(246, 8, 8, 0.857));  
+  background: linear-gradient(#f68438,rgba(246, 8, 8, 0.857));
   letter-spacing: 3px;
   -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -478,9 +489,9 @@ section {
 }
 
 .img-fluid {
-  max-width: 90%;
-    height: auto;
+      height: auto;
     border-radius: 30%;
+    align-items: center;
 }
 
 /*--------------------------------------------------------------
@@ -516,7 +527,7 @@ section {
   width: 1px;
   height: 10px;
   transition: 0.9s;
-  background-color: #0563bb;
+  background-color: #ff7700;
 }
 
 /*--------------------------------------------------------------
@@ -533,7 +544,7 @@ section {
 .resume .resume-item {
   padding: 0 0 20px 20px;
   margin-top: -2px;
-  border-left: 2px solid #0563bb;
+  border-left: 2px solid #ff7700;
   position: relative;
 }
 
@@ -577,7 +588,7 @@ section {
   left: -9px;
   top: 0;
   background: #000000;
-  border: 2px solid #0563bb;
+  border: 2px solid #ff6600;
 }
 
 /*--------------------------------------------------------------
@@ -759,11 +770,11 @@ section {
   height: 12px;
   background-color: #000000;
   opacity: 1;
-  border: 1px solid #0563bb;
+  border: 1px solid #ff8c00;
 }
 
 .portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: #0563bb;
+  background-color: #ff8800;
 }
 
 .portfolio-details .portfolio-info {
@@ -807,135 +818,16 @@ section {
 # Services
 --------------------------------------------------------------*/
 
-.services .icon-box {
-  text-align: center;
-  padding: 70px 20px 80px 20px;
-  transition: all ease-in-out 0.3s;
-  background: #000000;
-  box-shadow: 0px 5px 90px 0px rgba(110, 123, 131, 0.05);
-}
-
-.services .icon-box .icon {
-  margin: 0 auto;
-  width: 100px;
-  height: 100px;
+.col-lg-4 {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: ease-in-out 0.3s;
-  position: relative;
-}
+  justify-content: center; /* Centraliza os ícones horizontalmente */
+  align-items: center; /* Centraliza os ícones verticalmente */
+  flex-direction: column; /* Empilha os ícones e os textos verticalmente */
+  text-align: center; /* Centraliza o texto e os ícones horizontalmente */
+  margin-bottom: 100px; /* Adiciona margem na parte inferior do ícone */
+ }
 
-.services .icon-box .icon i {
-  font-size: 36px;
-  transition: 0.5s;
-  position: relative;
-  
-}
 
-.services .icon-box .icon svg {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.services .icon-box .icon svg path {
-  transition: 0.5s;
-}
-
-.services .icon-box h4 {
-  font-weight: 600;
-  margin: 10px 0 15px 0;
-  font-size: 22px;
-}
-
-.services .icon-box h4 a {
-  color: #45505b;
-  transition: ease-in-out 0.3s;
-}
-
-.services .icon-box p {
-  line-height: 24px;
-  font-size: 14px;
-  margin-bottom: 0;
-}
-
-.services .icon-box:hover {
-  border-color: #000000;
-  box-shadow: 0px 0 35px 0 rgba(0, 0, 0, 0.08);
-}
-
-.services .iconbox-blue i {
-  color: #ff5900;
-}
-
-.services .iconbox-blue:hover .icon i {
-  color: #000000;
-}
-
-.services .iconbox-blue:hover .icon path {
-  fill: #ff8400;
-}
-
-.services .iconbox-orange i {
-  color: #00ddff;
-}
-
-.services .iconbox-orange:hover .icon i {
-  color: #000000;
-}
-
-.services .iconbox-orange:hover .icon path {
-  fill: #ffa76e;
-}
-
-.services .iconbox-pink i {
-  color: #e80368;
-}
-
-.services .iconbox-pink:hover .icon i {
-  color: #000000;
-}
-
-.services .iconbox-pink:hover .icon path {
-  fill: #e80368;
-}
-
-.services .iconbox-yellow i {
-  color: #ffbb2c;
-}
-
-.services .iconbox-yellow:hover .icon i {
-  color: #000000;
-}
-
-.services .iconbox-yellow:hover .icon path {
-  fill: #ffbb2c;
-}
-
-.services .iconbox-red i {
-  color: #ff5828;
-}
-
-.services .iconbox-red:hover .icon i {
-  color: #000000;
-}
-
-.services .iconbox-red:hover .icon path {
-  fill: #ff5828;
-}
-
-.services .iconbox-teal i {
-  color: #ff5828;
-}
-
-.services .iconbox-teal:hover .icon i {
-  color: #000000;
-}
-
-.services .iconbox-teal:hover .icon path {
-  fill: #ff5828;
-}
 
 /*--------------------------------------------------------------
 # Testimonials
@@ -951,7 +843,7 @@ section {
 
 .testimonials .testimonial-item {
   text-align: center;
-  
+
 }
 
 .testimonials .testimonial-item .testimonial-img {
@@ -965,7 +857,7 @@ section {
   font-size: 20px;
   font-weight: bold;
   margin: 10px 0 5px 0;
-  background: linear-gradient(#f68438,rgba(226, 0, 0, 0.579));  
+  background: linear-gradient(#f68438,rgba(226, 0, 0, 0.579));
   letter-spacing: 3px;
   -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -979,7 +871,7 @@ section {
 
 .testimonials .testimonial-item .quote-icon-left,
 .testimonials .testimonial-item .quote-icon-right {
-  background: linear-gradient(#f68438,rgba(226, 0, 0, 0.579));  
+  background: linear-gradient(#f68438,rgba(226, 0, 0, 0.579));
   letter-spacing: 3px;
   -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -1014,11 +906,11 @@ section {
   height: 12px;
   background-color: #000000;
   opacity: 1;
-  border: 1px solid #de7c04;
+  border: 1px solid #de5f046d;
 }
 
 .testimonials .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: #de7c04;
+  background: linear-gradient(#f68438,rgba(226, 0, 0, 0.579));
 }
 
 @media (min-width: 992px) {
@@ -1041,7 +933,7 @@ section {
   float: left;
   width: 44px;
   height: 44px;
-  background: linear-gradient(#f68438,rgba(226, 0, 0, 0.579));  
+  background: linear-gradient(#f68438,rgba(226, 0, 0, 0.579));
     display: flex;
   justify-content: center;
   align-items: center;
@@ -1072,7 +964,7 @@ section {
 .contact .info .email:hover i,
 .contact .info .address:hover i,
 .contact .info .phone:hover i {
-  background: linear-gradient(#f68438,rgba(226, 0, 0, 0.579));  
+  background: linear-gradient(#f68438,rgba(226, 0, 0, 0.579));
   letter-spacing: 3px;
   -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -1104,7 +996,7 @@ section {
 .contact .php-email-form .sent-message {
   display: none;
   color: #000000;
-  background: #18d26e;
+  background: #ff9900;
   text-align: center;
   padding: 15px;
   font-weight: 600;
@@ -1124,7 +1016,7 @@ section {
   width: 24px;
   height: 24px;
   margin: 0 10px -6px 0;
-  border: 3px solid #18d26e;
+  border: 3px solid #ff8400;
   border-top-color: #eee;
   animation: animate-loading 1s linear infinite;
 }
@@ -1146,7 +1038,7 @@ section {
 }
 
 .contact .php-email-form button[type=submit] {
-  background: linear-gradient(#f68438,rgba(226, 0, 0, 0.579)); 
+  background: linear-gradient(#f68438,rgba(226, 0, 0, 0.579));
   padding: 10px 35px;
   color: #000000;
   transition: 0.4s;
@@ -1154,7 +1046,7 @@ section {
 }
 
 .contact .php-email-form button[type=submit]:hover {
-  background: linear-gradient(#ff0000,rgb(255, 128, 0)); 
+  background: linear-gradient(#ff0000,rgb(255, 128, 0));
 }
 
 @keyframes animate-loading {
@@ -1202,7 +1094,7 @@ section {
 #footer .social-links a {
   font-size: 18px;
   display: inline-block;
-  background: #ff9100;
+  background: #ff9100d7;
   color: #fff;
   line-height: 1;
   padding: 8px 0;
@@ -1218,8 +1110,11 @@ section {
   background: #ff8400;
   color: #9b1919;
   text-decoration: none;
+  
 }
-
+a:visited {
+  color: #ff8400; /* Cor que o link terá após ser clicado */
+}
 #footer .copyright {
   margin: 0 0 5px 0;
 }
