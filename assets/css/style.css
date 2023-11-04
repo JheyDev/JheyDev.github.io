@@ -610,6 +610,19 @@ section {
   filter: none; /* Remove o filtro de escala de cinza e desfoque */
     }
 
+/* Adicione uma media query para ajustar o layout em telas menores */
+@media (max-width: 768px) {
+  .item {
+    width: calc(50% - 10px); /* 2 colunas em telas médias */
+  }
+}
+
+/* Adicione outra media query para telas ainda menores */
+@media (max-width: 480px) {
+  .item {
+    width: 100%; /* 1 coluna em telas pequenas */
+}
+}
 
 .overlay {
   position: fixed;
@@ -643,7 +656,7 @@ section {
 .proximo {
   position: absolute;
   top: 50%;
-  right:-80px; /* Ajuste a posição do botão conforme necessário */
+  right:-65px; /* Ajuste a posição do botão conforme necessário */
   transform: translateY(-50%);
     letter-spacing: 3px;
     background: linear-gradient(#f6843890,rgba(246, 8, 8, 0.492));
@@ -663,6 +676,33 @@ section {
   -webkit-background-clip: text;
             -webkit-text-fill-color: transparent; /* Cor de fundo ao passar o mouse */
 }
+
+.anterior {
+  position: absolute;
+  top: 50%;
+  left: -65px; /* Ajuste a posição do botão conforme necessário */
+  transform: translateY(-50%);
+  letter-spacing: 3px;
+  background: linear-gradient(#f6843890,rgba(246, 8, 8, 0.492));
+  letter-spacing: 3px;
+  -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+  color: #0000006f; /* Cor do texto do botão */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.anterior:hover {
+  background: linear-gradient(#f68438,rgba(246, 8, 8, 0.857));
+  letter-spacing: 3px;
+  -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent; /* Cor de fundo ao passar o mouse */
+}
+
+
+
 
 /*--------------------------------------------------------------
 # Catalogo de Imagens
