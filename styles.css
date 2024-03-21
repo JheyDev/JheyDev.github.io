@@ -1,0 +1,339 @@
+/* Restante do seu CSS aqui */
+
+
+@font-face {
+    font-family: 'Gata';
+    src: url('assets/fonts/Kiona-Regular.ttf') format('truetype');
+}
+
+/* Estilos gerais */
+
+body {
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: url(assets/img/black-wallpaper.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; /* Cobrir toda a tela */
+    height: 100vh; /* Altura igual a 100% da viewport */
+    overflow: hidden; /* Ocultar a barra de rolagem se necessário */
+    position: relative; /* Alterado para relativo para permitir posicionamento absoluto de elementos filhos */
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    }
+
+a {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+.logo-small {
+    display: flex; /* Usa o sistema flexbox para alinhar os itens horizontalmente */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    text-decoration: none; /* Remove a decoração de link */
+}
+
+.logo-small img {
+    max-width: 35px; /* Define a largura máxima da logo pequena */
+    height: auto; /* Garante que a proporção da imagem seja mantida ao redimensionar */
+    margin-right: 5px; /* Adiciona um pequeno espaço entre a logo pequena e o texto */
+}
+
+.logo-text {
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #fff; /* Adiciona a cor branca para o texto "Tiger Codes" */
+    margin: 0; /* Remove margens para garantir que não haja espaços indesejados */
+}
+
+
+/* Restante do seu CSS aqui */
+
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background: black;
+    height: 8vh;
+    padding-right: 20px; /* Adiciona um espaçamento interno ao lado direito */
+    
+}
+.nav-list {
+    display: flex; /* Mostra a lista de navegação como flexbox */
+}
+
+.nav-list li {
+    margin-left: 20px; /* Adiciona espaçamento entre os itens do menu */
+}
+
+
+@media only screen and (max-width: 768px) {
+    /* Outros estilos do seu CSS aqui */
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: 'Gata';
+    background-color: black;
+    height: 8vh;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+}
+
+.nav-list li {
+    letter-spacing: 3px;
+    margin-left: 32px;
+}
+
+.mobile-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.mobile-menu div {
+    width: 32px;
+    height: 2px;
+    background: white;
+    margin: 8px;
+    transition: 0.3s;
+}
+
+
+    .nav-list {
+        position: absolute;
+        top: 8vh;
+        right: 0;
+        width: 40vw;
+        height: 50vh;
+        background: rgba(0, 0, 0, 0.911);
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in;
+        display: flex;
+        z-index: 1;
+    }
+    
+    .nav-list li {
+        margin-left: 0;
+        opacity: 0;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+}
+
+.nav-list.active {
+    transform: translateX(0);
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.mobile-menu.active .line1 {
+    transform: rotate(-45deg) translate(-8px, 8px);
+
+}
+
+.mobile-menu.active .line2 {
+    opacity: 0;
+    
+}
+
+.mobile-menu.active .line3 {
+    transform: rotate(45deg) translate(-5px, -7px);
+    
+}
+.conteudo {
+    max-width: 100%; /* Defina a largura máxima do conteúdo */
+    margin: 0 auto; /* Centralize o conteúdo na tela */
+    padding: 20px; /* Adicione um espaçamento interno */
+}
+
+
+.conteudo-principal-escrito {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.conteudo-principal-escrito-titulo {
+    font-family: "Gata";
+    font-weight: 400;
+    font-size: 50px;
+    color: white;
+}
+
+.conteudo-principal-escrito-subtitulo {
+    font-family: 'Gata';
+    font-weight: 400;
+    font-size: 24px;
+    color: white;
+}
+
+@media only screen and (max-width: 768px) {
+    body {
+        overflow: hidden; /* Impede a rolagem do conteúdo */
+    }
+    
+    html, body {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    body::before {
+        content: ""; /* Cria um pseudo-elemento antes do corpo */
+        position: fixed; /* Fixa o pseudo-elemento na tela */
+        top: 0;
+        left: 0;
+        width: 100%; /* Largura igual a 100% */
+        height: 100%; /* Altura igual a 100% */
+        background-image: url(assets/img/black-wallpaper.jpg); /* Define a imagem de fundo */
+        background-size: cover; /* Ajusta o tamanho do background */
+        background-position: center; /* Centraliza a posição do background */
+        z-index: -1; /* Coloca o background atrás do conteúdo */
+    }
+}
+
+    .conteudo-principal {
+        flex-direction: column; /* Alterar a direção do flex para empilhar verticalmente */
+        text-align: center; /* Centralizar o conteúdo na tela */
+    }
+
+    .conteudo-principal-imagem {
+        width: 100%; /* Ajustar a largura da imagem para ocupar toda a largura do contêiner */
+        max-width: 250px; /* Limitar a largura máxima da imagem para evitar esticamento */
+        display: block; /* Certifique-se de que a imagem é exibida como um bloco */
+        margin: 20px auto 0; /* Centralizar a imagem horizontalmente e adicionar margem superior */
+    }
+
+    
+.btn {
+    line-height: 50px;
+    height: 50px;
+    text-align: center;
+    width: 100%;
+    max-width: 250px;
+    cursor: pointer;
+    margin: 0 auto; /* Centralize o botão na página */
+}
+
+@media only screen and (min-width: 768px) {
+    .btn {
+        margin: auto; /* Define margens automáticas para centralizar o botão horizontalmente */
+        display: block; /* Certifique-se de que o botão é exibido como um bloco para que as margens automáticas funcionem */
+    }
+}
+
+
+.btn-one {
+    color: #FFF;
+    transition: all 0.3s;
+    position: relative;
+    letter-spacing: 12px;
+}
+
+.btn-one span {
+    transition: all 0.3s;
+}
+
+.btn-one::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.3s;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-top-color: #FFAF59;
+    border-bottom-color: #FFAF59;
+    transform: scale(0.1, 1);
+}
+
+.btn-one:hover span {
+    letter-spacing: 2px;
+}
+
+.btn-one:hover::before {
+    opacity: 1; 
+    transform: scale(1, 1);
+}
+
+
+footer {
+    position: fixed; /* Fixar o footer na parte inferior da tela */
+    bottom: 0;
+    width: 100%; /* Defina uma largura máxima para o footer */
+    max-width: 100%; /* Defina a largura máxima desejada */
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    text-align: center;
+    padding: 10px; /* Adicione um espaçamento interno */
+    box-sizing: border-box; /* Certifique-se de que o padding não aumente a largura */
+    margin-left: auto; /* Centralize o footer na página */
+    margin-right: auto; /* Centralize o footer na página */
+    display: block; /* Faça o footer ser exibido como um bloco */
+    font-family: 'Gata';
+}
+
+
+.coracao {
+    vertical-align: middle; /* Alinhar o coração verticalmente com o texto */
+    display: inline-block; /* Permitir que o coração seja exibido inline */
+    width: 1em; /* Definir a largura do coração para que ele não ocupe mais espaço que o texto */
+    height: 1em; /* Definir a altura do coração */
+    color: red; /* Definir a cor do coração */
+}
+
+/* Adiciona estilo para desabilitar seleção e cópia */
+body {
+    user-select: none; /* Impede a seleção de texto */
+    -moz-user-select: none; /* Para navegadores Firefox */
+    -webkit-user-select: none; /* Para navegadores WebKit como Chrome e Safari */
+    -ms-user-select: none; /* Para navegadores Microsoft como Edge */
+}
+
+/* Define o cursor para padrão para indicar que a seleção de texto está desativada */
+body * {
+    cursor: default;
+}
+
+/* Opcional: adicione um estilo de cursor diferente para elementos clicáveis */
+a, button, input {
+    cursor: pointer; /* Define o cursor como padrão para links, botões e inputs */
+}
