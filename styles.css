@@ -58,7 +58,7 @@ nav {
 }
 
 .nav-list li {
-    margin-left: 20px; /* Adiciona espaçamento entre os itens do menu */
+    margin-left: 15px; /* Adiciona espaçamento entre os itens do menu */
 }
 
 
@@ -90,7 +90,7 @@ nav {
 
 .mobile-menu div {
     width: 32px;
-    height: 2px;
+    height: 1px;
     background: white;
     margin: 8px;
     transition: 0.3s;
