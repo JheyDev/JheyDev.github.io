@@ -37,11 +37,29 @@ a:hover {
     opacity: 0.7;
 }
 
-.logo {
+.logo-small {
+    display: flex; /* Usa o sistema flexbox para alinhar os itens horizontalmente */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    text-decoration: none; /* Remove a decoração de link */
+}
+
+.logo-small img {
+    max-width: 35px; /* Define a largura máxima da logo pequena */
+    height: auto; /* Garante que a proporção da imagem seja mantida ao redimensionar */
+    margin-right: 5px; /* Adiciona um pequeno espaço entre a logo pequena e o texto */
+}
+
+.logo-text {
     font-size: 24px;
     text-transform: uppercase;
     letter-spacing: 4px;
+    color: #fff; /* Adiciona a cor branca para o texto "Tiger Codes" */
+    margin: 0; /* Remove margens para garantir que não haja espaços indesejados */
 }
+
+
+/* Restante do seu CSS aqui */
+
 
 nav {
     display: flex;
@@ -102,7 +120,7 @@ nav {
         top: 8vh;
         right: 0;
         width: 40vw;
-        height: 92vh;
+        height: 50vh;
         background: rgba(0, 0, 0, 0.911);
         flex-direction: column;
         align-items: center;
@@ -215,11 +233,10 @@ nav {
         width: 100%; /* Ajustar a largura da imagem para ocupar toda a largura do contêiner */
         max-width: 250px; /* Limitar a largura máxima da imagem para evitar esticamento */
         display: block; /* Certifique-se de que a imagem é exibida como um bloco */
-        margin: 0 auto; /* Centralizar a imagem horizontalmente */
+        margin: 20px auto 0; /* Centralizar a imagem horizontalmente e adicionar margem superior */
     }
+
     
-
-
 .btn {
     line-height: 50px;
     height: 50px;
@@ -302,3 +319,20 @@ footer {
     color: red; /* Definir a cor do coração */
 }
 
+/* Adiciona estilo para desabilitar seleção e cópia */
+body {
+    user-select: none; /* Impede a seleção de texto */
+    -moz-user-select: none; /* Para navegadores Firefox */
+    -webkit-user-select: none; /* Para navegadores WebKit como Chrome e Safari */
+    -ms-user-select: none; /* Para navegadores Microsoft como Edge */
+}
+
+/* Define o cursor para padrão para indicar que a seleção de texto está desativada */
+body * {
+    cursor: default;
+}
+
+/* Opcional: adicione um estilo de cursor diferente para elementos clicáveis */
+a, button, input {
+    cursor: pointer; /* Define o cursor como padrão para links, botões e inputs */
+}
