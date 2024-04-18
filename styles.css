@@ -211,19 +211,43 @@ nav {
 .conteudo {
     max-width: 100%; /* Defina a largura máxima do conteúdo */
     margin: 0 auto; /* Centralize o conteúdo na tela */
-    padding: 20px; /* Adicione um espaçamento interno */
+    padding: 10px; /* Adicione um espaçamento interno */
     margin-top: 100px;
 }
 
 
+/* Default styles */
 .conteudo-principal-escrito {
     display: flex;
     flex-direction: column;
-    gap: 32px; 
-    position: relative; /* Posição relativa para posicionar o texto dentro do contêiner */
-    z-index: 1; /* Garante que o texto fique acima da imagem de fundo */
-    color: #fff; /* Cor do texto */
+    gap: 32px;
+    position: relative;
+    z-index: 1;
+    color: #fff;
 }
+
+/* Media query for smaller devices */
+@media only screen and (max-width: 768px) {
+    .conteudo-principal-escrito {
+        /* Adjust styling for smaller screens */
+        /* For example, you can change flex-direction to row for smaller screens */
+        flex-direction: row;
+        /* You can also adjust other properties as needed */
+    }
+}
+
+/* Media query for even smaller devices */
+@media only screen and (max-width: 480px) {
+    .conteudo-principal-escrito {
+        /* Adjust styling further for even smaller screens */
+        /* For example, you can reduce the gap between items */
+        gap: 16px;
+        /* You can also adjust other properties as needed */
+    }
+}
+
+/* Add more media queries as necessary to target different screen sizes */
+
 
 .conteudo-principal-escrito-titulo {
     font-family: "Gata";
@@ -372,8 +396,7 @@ nav {
         }
     
         .footer-company-name {
-            color: white;
-            opacity: 0.5;
+            color: rgba(255, 255, 255, 0.589);
             font-family: 'Gata';
             letter-spacing: 2px;
             white-space: nowrap;
