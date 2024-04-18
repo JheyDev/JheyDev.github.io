@@ -79,7 +79,8 @@ a:hover {
 .logo-small img {
     max-width: 35px; /* Define a largura máxima da logo pequena */
     height: auto; /* Garante que a proporção da imagem seja mantida ao redimensionar */
-    margin-right: 5px; /* Adiciona um pequeno espaço entre a logo pequena e o texto */
+    margin-right: 10px; /* Adiciona um pequeno espaço entre a logo pequena e o texto */
+margin-left: -30px;
 }
 
 .logo-text {
@@ -225,10 +226,11 @@ nav {
     font-family: "Gata";
     font-weight: 400;
     font-size: 45px;
-    text-align: left; /* Alinha o texto à esquerda */
-    margin-top: 100px;
-    margin-left: 5%; /* Adiciona um espaçamento à esquerda para alinhar o subtítulo mais à direita */
+    text-align: left;
+    margin-top: 10px; /* Adjust the top margin to move the text up */
+    margin-left: 5%;
 }
+
 
 .conteudo-principal-escrito-subtitulo {
     font-family: "Gata";
@@ -246,13 +248,13 @@ nav {
 
 .conteudo-principal-imagem {
     width: 100%;
-    max-width: 250px;
+    max-width: 150px;
     display: block;
-    margin: 0 auto; /* Centraliza horizontalmente */
-    animation: moveUpAndDown 2s infinite; /* Aplica a animação com repetição infinita */
+    position: relative; /* Set position to relative */
+    top: 85px; /* Adjust the top position to move the image down */
+    margin: 0 auto; /* Reset margin */
+    animation: 2s ease 0s infinite normal none running moveUpAndDown;
 }
-
-
 
 
 
@@ -338,14 +340,15 @@ nav {
             border: none; /* Remove a borda */
         }
     
-    .footer-company-name {
-        color: white;
-        opacity: 50%;
-        font-family: 'Gata';
-        letter-spacing: 2px;
-        font-size: 12px;
-    }
-
+        .footer-company-name {
+            color: white;
+            opacity: 50%;
+            font-family: 'Gata';
+            letter-spacing: 2px;
+            font-size: 10px;
+            white-space: nowrap; /* Prevent text from wrapping */
+        }
+       
 
 .btn-one {
     color: #FFF;
@@ -394,7 +397,6 @@ footer {
     background-color: #FFAF59;
     box-sizing: border-box;
     text-align: center;
-    font: normal 16px "Arial", sans-serif;
     padding: 20px 50px;
 }
 
@@ -404,14 +406,19 @@ footer {
 .footer-distributed {
     background-color: #00000075;
     box-sizing: border-box;
-    width: 100%;
-    text-align: center; /* Centraliza o texto */
-    font: normal 16px "Arial", sans-serif;
-    padding: 10px 50px;
-    display: flex; /* Torna o container um flex container */
-    justify-content: center; /* Centraliza os itens horizontalmente */
-    align-items: center; /* Centraliza os itens verticalmente */
+    width: 100%; /* Take full width of the page */
+    height: 50px; /* Adjust the height as desired */
+    text-align: center; /* Center the text */
+    font: normal 10px "Arial", sans-serif;
+    display: flex; /* Make the container a flex container */
+    justify-content: center; /* Center the items horizontally */
+    align-items: center; /* Center the items vertically */
+    position: fixed; /* Fix the position at the bottom of the page */
+    bottom: 0; /* Stick it to the bottom */
+    left: 0; /* Align to the left */
 }
+
+
 
 .footer-left,
 .footer-right {
@@ -438,29 +445,6 @@ footer {
 
 .footer-distributed .footer-center {
     width: 40%;
-}
-
-.footer-distributed .footer-icons {
-    margin-top: 10px; /* Ajuste para mover mais para baixo */
-}
-
-.footer-distributed .footer-icons a {
-    display: inline-block;
-    width: 35px;
-    height: 35px;
-    cursor: pointer;
-    background-color: #0000003d;
-    border-radius: 50%;
-    font-size: 20px;
-    color: white;
-    text-align: center;
-    line-height: 35px;
-    margin-right: 10px;
-    transition: background-color 0.3s;
-}
-
-.footer-distributed .footer-icons a:hover {
-    background-color: #ff7300;
 }
 
 .footer-links a:hover {
