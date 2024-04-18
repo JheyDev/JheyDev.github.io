@@ -29,37 +29,15 @@
           <div class="line3"></div>
         </div>
         <ul class="nav-list">
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="about.html">Sobre</a></li>
+          <li><a href="/">Inicio</a></li>
+          <li><a href="about.html" class="active">Sobre</a></li>
           <li><a href="/">Projetos</a></li>
           <li><a href="/">Contato</a></li>
-      </ul>
-      
+        </ul>
       </nav>
-      
     </header>
 
     
-    <main class="conteudo">
-      <section class="conteudo-principal">
-        <div class="conteudo-principal-escrito">
-          <div class="conteudo-principal-escrito-titulo">Jennyfer Ribeiro</div>
-          <h2 class="conteudo-principal-escrito-subtitulo">
-            Desenvolvedora Web
-          </h2>
-
-          <!-- Adicione os ícones das redes sociais aqui -->
-          <div class="box-1">
-            <div class="btn btn-one">
-              <span>PORTFOLIO</span>
-            </div>
-          </div>
-        </div>
-        <img
-          class="conteudo-principal-imagem"
-          src="assets/img/Icons/Logo.png"
-          alt="Imagem da Balee Bot"
-        />
       </section>
       
     </main>
@@ -77,24 +55,4 @@
   
     <script src="mobile-navbar.js"></script>
   </body>
-
-  <script>
-    // Pega todos os itens do menu
-    var menuItems = document.querySelectorAll('.nav-list a');
-    
-    // Adiciona um evento de clique a cada item
-    menuItems.forEach(function(item) {
-        item.addEventListener('click', function() {
-            // Remove a classe 'active' de todos os itens
-            menuItems.forEach(function(item) {
-                item.classList.remove('active');
-            });
-            
-            // Adiciona a classe 'active' ao item clicado
-            this.classList.add('active');
-        });
-    });
-</script>
-
-
 </html>

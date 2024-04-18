@@ -67,7 +67,7 @@ a {
 
 a:hover {
     opacity: 0.7;
-    color: rgb(255, 115, 0);
+    color: #FFAF59;
 }
 
 .logo-small {
@@ -570,3 +570,7 @@ body * {
 a, button, input {
     cursor: pointer; /* Define o cursor como padrão para links, botões e inputs */
 }
+.nav-list a.active {
+   color: #FFAF59;
+}
+
