@@ -163,7 +163,7 @@ nav {
         transform: translateX(100%);
         transition: transform 0.3s ease-in;
         display: flex;
-        z-index: 1;
+        z-index: 5;
     }
 
         .nav-list li {
@@ -212,6 +212,7 @@ nav {
     max-width: 100%; /* Defina a largura máxima do conteúdo */
     margin: 0 auto; /* Centralize o conteúdo na tela */
     padding: 20px; /* Adicione um espaçamento interno */
+    margin-top: 100px;
 }
 
 
@@ -227,11 +228,32 @@ nav {
 .conteudo-principal-escrito-titulo {
     font-family: "Gata";
     font-weight: 400;
-    font-size: 45px;
+    font-size: 40px;
     text-align: left;
     margin-top: 10px; /* Adjust the top margin to move the text up */
     margin-left: 5%;
+    color: #ffffff;
+    background: linear-gradient(to right, #4d4d4d 0, white 10%, #4d4d4d 20%);
+    background-position: 0;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 5s infinite linear;
+    animation-fill-mode: forwards;
+    -webkit-text-size-adjust: none;
+    text-decoration: none;
+    white-space: nowrap;
 }
+
+@keyframes shine {
+    0% {
+        background-position: -180px;
+    }
+    100% {
+        background-position: calc(100% + 500px);
+    }
+}
+
+  
 
 
 .conteudo-principal-escrito-subtitulo {
@@ -248,6 +270,7 @@ nav {
     100% { transform: translateY(0); } /* Retorna à posição inicial */
 }
 
+/* Common styles for .conteudo-principal-imagem */
 .conteudo-principal-imagem {
     width: 100%;
     max-width: 150px;
@@ -258,14 +281,29 @@ nav {
     animation: 2s ease 0s infinite normal none running moveUpAndDown;
 }
 
+/* Additional styles for .conteudo-principal-imagem on mobile */
+@media only screen and (max-width: 768px) {
+    .conteudo-principal-imagem {
+        margin-top: 10px; /* Adjust the top margin for mobile */
+        position: static; /* Reset position to default */
+    }
+}
 
+/* Additional styles for .conteudo-principal-imagem on large screens */
+@media only screen and (min-width: 769px) {
+    .conteudo-principal-imagem {
+        margin-top: -230px; /* Adjust top margin for large screens */
+        margin-right: 10%; /* Adjust right margin for large screens */
+    }
+}
 
+/* Background image styles */
 @media only screen and (max-width: 768px) {
     body {
-        overflow: hidden; /* Impede a rolagem do conteúdo */
+        overflow: hidden; /* Prevent content scrolling */
     }
 
-        html, body {
+    html, body {
         height: 100%;
         width: 100%;
         margin: 0;
@@ -274,26 +312,16 @@ nav {
     }
 
     body::before {
-        content: ""; /* Cria um pseudo-elemento antes do corpo */
-        position: fixed; /* Fixa o pseudo-elemento na tela */
+        content: ""; /* Create a pseudo-element before the body */
+        position: fixed; /* Fix the pseudo-element on the screen */
         top: 0;
         left: 0;
-        width: 100%; /* Largura igual a 100% */
-        height: 100%; /* Altura igual a 100% */
-        background-image: url(assets/img/black-wallpaper.jpg); /* Define a imagem de fundo */
-        background-size: cover; /* Ajusta o tamanho do background */
-        background-position: center; /* Centraliza a posição do background */
-        z-index: -1; /* Coloca o background atrás do conteúdo */
-    }
-
-    .conteudo-principal-imagem {
-        width: 100%;
-        max-width: 150px;
-        display: block;
-        position: relative; /* Set position to relative */
-        top: 10px; /* Adjust the top position to move the image down */
-        margin: 0 auto; /* Reset margin */
-        animation: 2s ease 0s infinite normal none running moveUpAndDown;
+        width: 100%; /* Width equal to 100% */
+        height: 100%; /* Height equal to 100% */
+        background-image: url(assets/img/black-wallpaper.jpg); /* Set the background image */
+        background-size: cover; /* Adjust background size */
+        background-position: center; /* Center background position */
+        z-index: -1; /* Place the background behind the content */
     }
 }
 
@@ -305,24 +333,16 @@ nav {
     }
 }
 
-    .conteudo-principal {
-        flex-direction: column; /* Alterar a direção do flex para empilhar verticalmente */
-        text-align: center; /* Centralizar o conteúdo na tela */
-    }
+.conteudo-principal-escrito {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    position: relative;
+    z-index: 1;
+    color: #fff;
+}
 
-    @media only screen and (max-width: 768px) {
-        .conteudo-principal-imagem {
-            margin-top: 10px; /* Ajustar a margem superior para 10px apenas em modo mobile */
-        }
-    }
-
-    @media only screen and (min-width: 1200px) {
-        .conteudo-principal-imagem {
-            margin-top: -230px;
-            margin-right: 10%;
-        }
-    }
-    
+   
 
     .btn {
         line-height: 50px;
@@ -356,7 +376,6 @@ nav {
             opacity: 0.5;
             font-family: 'Gata';
             letter-spacing: 2px;
-            font-size: 2vw;
             white-space: nowrap;
             text-align: center;
             position: absolute;
