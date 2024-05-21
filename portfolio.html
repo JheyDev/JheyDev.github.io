@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Este é um site voltado para mostrar meus projetos e que tem uma breve descrição de quem é Jennyr Developer" />
+    <title>Jenny.R Developer</title>
+    <link rel="stylesheet" type="text/css" href="portfolio.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300i,400" rel="stylesheet">
+    
+</head>
+
+<body>
+  
+       <header>
+        <nav>
+            <a class="logo-small" href="/">
+                <img src="assets/img/Icons/Logo.png" alt="Logo Pequena" />
+                <span class="logo-text">Jhey.Dev</span>
+            </a>
+            <div class="mobile-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <ul class="nav-list">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="about.html">Sobre</a></li>
+                <li><a href="/">Projetos</a></li>
+                <li><a href="/">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    
+    
+    <body>
+        <div class="background-overlay"></div>
+        <div class="container">
+                <img src="assets/projetos/MuchaTseBle.jpg" alt="" class="project-image">
+        <img src="assets/projetos/3b9fa60e-7e5a-46c9-8107-abd353f641b6.jpg" alt="" class="project-image">
+        <img src="assets/projetos/44cb9a26-2933-4c54-8833-5c4e35d82d6b.jpg" alt="" class="project-image">
+        <img src="assets/projetos/982e1684-bfa6-4f2b-9181-0d2dd1a7e4f3.jpg" alt="" class="project-image">
+        <img src="assets/projetos/a232d4b2-badf-4ff0-b5b0-b340f0543684.jpg" alt="" class="project-image">
+        <img src="assets/projetos/a6bba9e6-350e-4c96-b4a6-8a47ff4ef02b.jpg" alt="" class="project-image">
+        <img src="assets/projetos/c2871964-bd26-49df-9088-c2bacd751856.jpg" alt="" class="project-image">
+        <img src="assets/projetos/MuchaTseBle.jpg" alt="" class="project-image">
+    </div>
+
+    
+    </body>
+    
+
+    <footer class="footer-distributed">
+        <div class="footer-left">
+            <p class="footer-company-name">
+                Criado com <span class="heart">♥</span> por: <strong>Jennyfer Ribeiro</strong><br> Todos os direitos reservados
+            </p>
+        </div>
+    </footer>
+
+    <script src="mobile-navbar.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Pega todos os itens do menu
+        var menuItems = document.querySelectorAll('.nav-list a');
+        
+        // Adiciona um evento de clique a cada item
+        menuItems.forEach(function(item) {
+            item.addEventListener('click', function() {
+                // Remove a classe 'active' de todos os itens
+                menuItems.forEach(function(item) {
+                    item.classList.remove('active');
+                });
+                
+                // Adiciona a classe 'active' ao item clicado
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
