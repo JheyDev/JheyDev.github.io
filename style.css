@@ -1,0 +1,507 @@
+@font-face {
+    font-family: 'tan';
+    src: url('assets/fonts/tan-pearl.woff') format('woff');   
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'mesveda';
+    src: url('assets/fonts/Mesveda-Regular.woff') format('woff');   
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Estilos gerais */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+a:hover {
+    opacity: 0,7;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Estilos gerais */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+a:hover {
+    opacity: 0,7;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: black;
+    background-size: cover; /* Garante que a imagem cubra toda a tela */
+    background-position: center; /* Centraliza a imagem de fundo */
+    background-repeat: no-repeat; /* Evita que a imagem se repita */
+    
+}
+
+.logo {
+    font-size: 20px;
+    letter-spacing: 4px;
+    display: inline-block; /* Adiciona esta linha */
+    vertical-align: middle; /* Alinha verticalmente com a imagem */
+    font-family: 'tan';
+  }
+  
+  .logoimg {
+    width: 45px; /* Ajuste a largura conforme necessário */
+    height: 45px; /* Mantém a proporção da imagem */
+    border-radius: 50%; /* Torna a imagem circular */
+    margin-right: 10px; /* Espaçamento entre a imagem e o texto */
+    vertical-align: middle; /* Alinha verticalmente com o texto */
+  }
+  
+
+.rotacionar:hover .logoimg {
+  transform: rotateZ(-30deg);
+}
+
+.rotacionar:hover .logo {
+  animation: trailing-effect 2s ease;
+  animation-iteration-count: 1;
+}
+
+@keyframes trailing-effect {
+  0% {
+    left: -50px;
+    opacity: 0;
+  }
+  100% {
+    left: 0;
+    opacity: 1;
+  }
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: black;
+    height: 8vh;
+    position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+nav.transparent {
+    background: rgba(0, 0, 0, 0.5);
+      }
+  
+
+.nav-list {
+    list-style: none;
+    display: flex;
+}
+
+.nav-list li a {
+    transition: color 0.2s ease-in-out;
+    color: white; /* Cor padrão */
+    text-decoration: none; /* Remove sublinhado padrão */
+  }
+  
+  .nav-list li a:hover {
+    color: #ff8800; /* Cor quando hover */
+  }
+  
+  .nav-list li a.active {
+    color: #ff8800; /* Cor quando ativo */
+    box-shadow: 0 1px 0 #ff8800; /* Linha embaixo quando ativo, com espessura de 4px */
+  }
+  
+  
+
+.nav-list li {
+    letter-spacing: 3px;
+    margin-left: 32px;
+}
+
+.mobile-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.mobile-menu div {
+    width: 32px;
+    height: 2px;
+    background: #fff;
+    margin: 8px;
+    transition: 0.3s;
+}
+
+@media (max-width: 999px) {
+    body {
+        overflow-x: hidden;
+    }
+    .nav-list {
+        position: absolute;
+        top: 8vh;
+        right: 0;
+        width: 50vw;
+        height: 92vh;
+        background: black;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in;
+    }
+
+    .nav-list li {
+        margin-left: 0;
+        opacity: 0;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+}
+
+
+.mobile-menu.active .line1 {
+transform: rotate(-45deg) translate(-8px, 8px);
+}
+
+.mobile-menu.active .line2 {
+    opacity: 0;
+}
+
+.mobile-menu.active .line3 {
+    transform: rotate(45deg) translate(-5px, -7px);
+}
+
+.nav-list.active {
+    transform: translateX(0);
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+body {
+    animation: fadeIn 2s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding-top: 60px;
+    transition: opacity 0.5s;
+}
+
+section:target {
+    opacity: 1;
+}
+
+.section1 {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: linear-gradient(rgba(0, 0, 0, 0.671), rgb(0, 0, 0)), url('assets/img/background-home.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: fadeIn 2s ease-in-out; /* Adiciona animação de fade-in */
+}
+
+.titulo {
+    color: #c2c2c29c;
+    font-family: 'tan';
+    letter-spacing: 6px;
+    font-size: 10vw; /* Ajuste responsivo */
+    text-align: center;
+    animation: fadeIn 2s ease-in-out; /* Adiciona animação de fade-in */
+}
+
+.subtitulo {
+    color: #fcfcfc;
+    font-family: 'tan';
+    letter-spacing: 6px;
+    font-size: 1.5vw; /* Ajuste responsivo */
+    text-align: right;
+    align-self: flex-end;
+    margin-right: 1px;
+    margin-top: -15px;
+    position: relative;
+    animation: fadeIn 2s ease-in-out; /* Adiciona animação de fade-in */
+}
+
+.subtitulo::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: transparent;
+    background: linear-gradient(to right, #4d4d4d 0, white 10%, #4d4d4d 20%);
+    background-position: 0;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 15s infinite linear;
+    animation-fill-mode: forwards;
+    -webkit-text-size-adjust: none;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+@keyframes shine {
+    0% {
+        background-position: -180px;
+    }
+
+    100% {
+        background-position: calc(100% + 500px);
+    }
+}
+
+/* Media Queries para ajustar o layout em telas menores */
+@media (max-width: 768px) {
+    .titulo {
+        font-size: 10vw;
+    }
+    .subtitulo {
+        font-size: 3vw;
+        text-align: center;
+        margin-right: 0;
+        margin-top: 10px; /* Ajuste o espaçamento para evitar sobreposição */
+    }
+}
+
+.section2 {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: linear-gradient(rgba(0, 0, 0, 0.705), rgba(0, 0, 0, 0.582)), url('assets/img/background-about.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden; /* Evita que o conteúdo transborde */
+    display: flex; /* Usa flexbox para alinhar os elementos */
+    align-items: flex-start; /* Alinha os itens ao topo */
+}
+
+.profile {
+    width: 100%; /* A largura se ajusta ao contêiner pai */
+    height: auto; /* Mantém a proporção da imagem */
+    max-width: 600px; /* Limita a largura máxima */
+    margin-right: 20px; /* Ajuste a margem conforme necessário */
+    margin-top: 0; /* Remove a margem superior */
+    box-sizing: border-box; /* Inclui margens e bordas no cálculo da largura */
+}
+
+@media (max-width: 768px) {
+    .profile {
+        width: 100%; /* A largura se ajusta ao contêiner pai */
+        height: auto; /* Mantém a proporção da imagem */
+        margin-right: 0; /* Remove a margem direita em telas menores */
+        margin-top: 0; /* Remove a margem superior em telas menores */
+    }
+}
+
+
+
+.tituloprofile {
+    color: #fcfcfc;
+    font-family: 'tan';
+    letter-spacing: 6px;
+    font-size: 2vw; /* Ajuste responsivo */
+    text-align: center;
+    animation: fadeIn 2s ease-in-out; /* Adiciona animação de fade-in */
+    margin-top: 60px;
+}
+
+.subtituloprofile {
+    color: #fcfcfc;
+    font-family: 'mesveda';
+    letter-spacing: 2px;
+    font-size: 1.3vw; /* Ajuste responsivo */
+    text-align: center;
+    animation: fadeIn 2s ease-in-out; /* Adiciona animação de fade-in */
+    margin-top: 50px;
+}
+
+
+.text-content {
+    display: inline-block;
+    vertical-align: top;
+    width: calc(100% - 670px); /* Ajuste a largura conforme necessário */
+}
+
+.text-content h2 {
+    text-align: center; /* Centraliza o título */
+}
+
+
+.section3 {
+    background-image: url('caminho/para/imagem3.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.footer-company-name {
+    color: rgba(255, 255, 255, 0.336);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    letter-spacing: 3px;
+    white-space: nowrap;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 100%;
+    overflow: hidden;
+    font-size: 10px;
+}
+
+.redes-sociais {
+    position: fixed;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.redes-sociais .social-icon {
+    color: #ffffff50;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.redes-sociais a:hover {
+    color: #ff8800;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.footer-distributed {
+    background-color: #00000075;
+    box-sizing: border-box;
+    width: 100%;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: 'tan';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Media Queries para responsividade */
+@media (max-width: 768px) {
+    .footer-company-name {
+        font-size: 10px;
+        letter-spacing: 4px;
+    }
+
+    .redes-sociais {
+        right: 5px;
+        gap: 5px;
+    }
+
+    .redes-sociais .social-icon {
+        font-size: 20px;
+    }
+
+    .footer-distributed {
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-company-name {
+        font-size: 8px;
+        letter-spacing: 2px;
+    }
+
+    .redes-sociais {
+        right: 2px;
+        gap: 2px;
+    }
+
+    .redes-sociais .social-icon {
+        font-size: 16px;
+    }
+
+    .footer-distributed {
+        height: 30px;
+    }
+}
+
+
+@keyframes heartBeat {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.3);
+    }
+    50% {
+        transform: scale(1);
+    }
+    75% {
+        transform: scale(1.3);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+.heart {
+    display: inline-block;
+    animation: heartBeat 1.5s infinite;
+    color: #ff8800;
+}

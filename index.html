@@ -1,113 +1,86 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Este é um site voltado para mostrar meus projetos e que tem uma breve descrição de quem é Jennyr Developer"
-    />
-    <title>Jenny.R Developer</title>
-    <link rel="stylesheet" type="text/css" href="index.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css" />
-
-  </head>
-
-  <body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DevArt</title>
+        <link rel="stylesheet" href="style.css">
+        <style>
+            /* Coloque aqui seu CSS */
+        </style>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="icon" href="assets/img/Icons/Logo.png" type="image/x-icon">
+    </head>
     
-    <div class="background-image"></div>
+<body>
     <header>
-      <nav>
-        <a class="logo-small" href="/">
-          <img src="assets/img/Icons/Logo.png" alt="Logo Pequena" />
-          <span class="logo-text">Jhey.Dev</span>
-        </a>
-        <div class="mobile-menu">
-          <div class="line1"></div>
-          <div class="line2"></div>
-          <div class="line3"></div>
-        </div>
-        <ul class="nav-list">
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="about.html">Sobre</a></li>
-          <li><a href="portfolio.html">Projetos</a></li>
-          <li><a href="/">Contato</a></li>
-      </ul>
-      
-      </nav>
-      
-    </header>
-
-    
-    <main class="conteudo">
-      <section class="conteudo-principal">
-        <div class="conteudo-principal-escrito">
-          <div class="conteudo-principal-escrito-titulo">Jennyfer Ribeiro</div>
-          <h2 class="conteudo-principal-escrito-subtitulo">
-            Desenvolvedora Web
-          </h2>
-
-                  <!-- Hover #1 -->
-                  <div class="box-1">
-                    <a href="portfolio.html">
-                      <div class="btn btn-one">
-                        <span>PORTFOLIO</span>
-                      </div>
-                    </a>
-                  </div>
-                  
-                  <!-- Redes Sociais -->
-<div class="redes-sociais">
-  <a href="https://api.whatsapp.com/send?phone=5541984323949&text=Ol%C3%A1,%20eu%20gostaria%20de%20fazer%20um%20or%C3%A7amento%20" target="_blank"><i class="fa fa-whatsapp"></i></a>
-  <a href="https://www.instagram.com/jennyr.developer/" target="_blank"><i class="fa fa-instagram"></i></a>
-  <a href="https://www.linkedin.com/in/jennyfersr/" target="_blank"><i class="fa fa-linkedin"></i></a>
-</div>
-
-
-
-        </div>
-        <img
-          class="conteudo-principal-imagem"
-          src="assets/img/Icons/Logo.png"
-          alt="Imagem da Balee Bot"
-        />
-      </section>
-      
-    </main>
-    <footer class="footer-distributed">
-        <div class="footer-left">
+        <nav>
+            <a class="rotacionar" href="#">
+              <img class="logoimg" src="assets/img/Icons/Logo.png" alt="Logo" style="vertical-align: middle;">
+              <span class="logo" style="position: relative; left: -50px; opacity: 0;">Dev<span style="color:#ff8800">A</span>rt<span style="color:#ff8800">✧</span></span>
+            </a>
+            <div class="mobile-menu">
+              <div class="line1"></div>
+              <div class="line2"></div>
+              <div class="line3"></div>
+            </div>
+            <ul class="nav-list">
+              <li><a href="#section1" class="nav-link">Home</a></li>
+              <li><a href="#section2" class="nav-link">About</a></li>
+              <li><a href="#section3" class="nav-link">Projects</a></li>
+              <li><a href="#section4" class="nav-link">Contact</a></li>
+            </ul>
+          </nav>
           
-            <p class="footer-company-name">
-                Criado com <span class="heart">♥</span> por: <strong>Jennyfer Ribeiro</strong><br> Todos os direitos reservados
-            </p>
-            
+    </header>
+    <section class="section1" id="section1">
+        <div class="background"></div>
+        <div class="content">
+            <h1 class="titulo">Dev<span class="shine" style="color: #ff8800;">A</span>rt</h1>
+            <h1 class="subtitulo" data-text="PORTFOLIO"></h1>
+            <div class="redes-sociais">            
+                <a href="https://github.com/JheyDev" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/jennyfersr/" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://wa.me/5541984323949" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+            </div>
         </div>
-        
-    </footer>
+    </section>
     
-  
-    <script src="mobile-navbar.js"></script>
-    <script src="script.js"></script>
-  </body>
+    
+    
+    <section class="section2" id="section2">
+    <div class="background"></div>
+    <div class="content">
+        <img class="profile" src="assets/img/profile.png" alt="Imagem de perfil">
+        <div class="text-content">
+            <h2 class="tituloprofile">About Me</h2>
+            <br>
+            <p class="subtituloprofile">Oiie! Meu nome é Jennyfer, mas pode me chamar de Jhey ou Jenny (●'◡'●)
+                <br><br>Sou apaixonada por desenvolver sites, especialmente a parte de frontend. Adoro criar designs e dar vida a ideias visuais. Ah, e gostom muito de inteligência artificial também!
+                <br>
+                Nos meus momentos de lazer, você vai me encontrar desenhando, jogando videogame ou criando artes digitais. Sou uma leitora voraz e sempre estou fazendo algum curso, porque aprender nunca é demais, né? E claro, não posso esquecer de mencionar meu amor por filmes e séries! E a trilha sonora da minha vida? Rock n’ roll, com certeza!
+            </p>
+        </div>
+    </div>
+</section>
 
-  <script>
-    // Pega todos os itens do menu
-    var menuItems = document.querySelectorAll('.nav-list a');
-    
-    // Adiciona um evento de clique a cada item
-    menuItems.forEach(function(item) {
-        item.addEventListener('click', function() {
-            // Remove a classe 'active' de todos os itens
-            menuItems.forEach(function(item) {
-                item.classList.remove('active');
-            });
+    <section id="section3">
+        <h1>Seção 3</h1>
+    </section>
+    <section id="section4"></section>
+        <h1>Seção 3</h1>
+    </section>
+
+    <footer class="footer-distributed">
+            <div class="footer-left">
+                <p class="footer-company-name">
+                    Criado com <span class="heart">♥</span> por: <strong>Jennyfer Ribeiro</strong><br> Todos os direitos reservados
+                </p>
+            </div>
             
-            // Adiciona a classe 'active' ao item clicado
-            this.classList.add('active');
-        });
-    });
-</script>
+        </footer>      
 
-
+    <script src="script.js"></script>
+    <script src="mobile-navbar.js"></script>
+</body>
 </html>
