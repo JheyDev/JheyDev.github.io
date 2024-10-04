@@ -212,19 +212,6 @@ transform: rotate(-45deg) translate(-8px, 8px);
     }
 }
 
-body {
-    animation: fadeIn 2s ease-in-out;
-  }
-  
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-  
 section {
     height: 100vh;
     display: flex;
@@ -247,7 +234,7 @@ section:target {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    animation: fadeIn 2s ease-in-out; /* Adiciona animação de fade-in */
+    
 }
 
 .titulo {
@@ -313,69 +300,102 @@ section:target {
 }
 
 .section2 {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background: linear-gradient(rgba(0, 0, 0, 0.705), rgba(0, 0, 0, 0.582)), url('assets/img/background-about.png');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* Diminui o padding para telas menores */
+    background: linear-gradient(rgba(0, 0, 0, 0.671), rgb(0, 0, 0)), url('assets/img/background-about.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    overflow: hidden; /* Evita que o conteúdo transborde */
-    display: flex; /* Usa flexbox para alinhar os elementos */
-    align-items: flex-start; /* Alinha os itens ao topo */
 }
 
-.profile {
-    width: 100%; /* A largura se ajusta ao contêiner pai */
+.profile-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    max-width: 100%; /* Garante que o contêiner não exceda a largura da tela */
+    width: 100%;
+    background: rgba(0, 0, 0, 0.842); /* Fundo branco para o container */
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    padding: 20px; /* Espaçamento interno */
+    box-sizing: border-box; /* Inclui o padding na largura total */
+}
+
+.text-content {
+    flex: 1; /* Permite que o texto ocupe o espaço restante */
+    margin-left: 20px; /* Espaço entre a imagem e o texto */
+    display: flex;
+    flex-direction: column; /* Permite empilhar os elementos */
+    align-items: flex-start; /* Alinha o conteúdo à esquerda */
+}
+
+.profile-pic {
+    width: 400px; /* Tamanho da imagem */
     height: auto; /* Mantém a proporção da imagem */
-    max-width: 600px; /* Limita a largura máxima */
-    margin-right: 20px; /* Ajuste a margem conforme necessário */
-    margin-top: 0; /* Remove a margem superior */
-    box-sizing: border-box; /* Inclui margens e bordas no cálculo da largura */
+    border-radius: 10px; /* Bordas arredondadas na imagem */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra na imagem */
 }
 
-@media (max-width: 768px) {
-    .profile {
-        width: 100%; /* A largura se ajusta ao contêiner pai */
-        height: auto; /* Mantém a proporção da imagem */
-        margin-right: 0; /* Remove a margem direita em telas menores */
-        margin-top: 0; /* Remove a margem superior em telas menores */
+.signature {
+    margin-top: 20px; /* Espaço acima da assinatura */
+    width: 300px; /* Defina um tamanho fixo ou responsivo para a assinatura */
+    height: auto; /* Mantém a proporção da assinatura */
+    display: block; /* Garante que a imagem da assinatura seja tratada como um bloco */
+    margin-left: auto; /* Margem automática à esquerda para centralizar */
+    margin-right: auto; /* Margem automática à direita para centralizar */
+}
+
+h2 {
+    font-family: 'tan'; /* Fonte do título */
+    color: #ff8800; /* Cor do texto do título */
+    margin-bottom: 0px; /* Espaço abaixo do título */
+}
+
+p {
+    font-family: 'mesveda'; /* Fonte do parágrafo */
+    color: #ffffffb4; /* Cor do texto do parágrafo */
+    line-height: 1.6; /* Maior espaçamento entre linhas */
+    font-size: 20px;
+}
+
+@media (max-width: 800px) {
+    .profile-container {
+        flex-direction: column; /* Muda para coluna em telas menores */
+        align-items: center; /* Centraliza os itens */
+        padding: 10px; /* Reduz o padding para telas menores */
+    }
+
+    .text-content {
+        margin-left: 0; /* Remove margem em telas menores */
+        margin-top: 20px; /* Espaço entre o texto e a imagem */
+        align-items: center; /* Centraliza o texto e a assinatura em telas menores */
+    }
+
+    .profile-pic {
+        width: 150px; /* Ajusta o tamanho da imagem em telas menores */
+    }
+
+    .signature {
+        width: 100px; /* Ajusta o tamanho da assinatura em telas menores */
     }
 }
 
+@media (max-width: 400px) {
+    .profile-pic {
+        width: 120px; /* Ajusta ainda mais o tamanho da imagem em telas muito pequenas */
+    }
 
+    .signature {
+        width: 100px; /* Ajusta ainda mais o tamanho da assinatura em telas muito pequenas */
+    }
 
-.tituloprofile {
-    color: #fcfcfc;
-    font-family: 'tan';
-    letter-spacing: 6px;
-    font-size: 2vw; /* Ajuste responsivo */
-    text-align: center;
-    animation: fadeIn 2s ease-in-out; /* Adiciona animação de fade-in */
-    margin-top: 60px;
+    .text-content {
+        padding: 10px; /* Ajusta o padding do texto para telas muito pequenas */
+        align-items: center; /* Centraliza o conteúdo em telas menores */
+    }
 }
-
-.subtituloprofile {
-    color: #fcfcfc;
-    font-family: 'mesveda';
-    letter-spacing: 2px;
-    font-size: 1.3vw; /* Ajuste responsivo */
-    text-align: center;
-    animation: fadeIn 2s ease-in-out; /* Adiciona animação de fade-in */
-    margin-top: 50px;
-}
-
-
-.text-content {
-    display: inline-block;
-    vertical-align: top;
-    width: calc(100% - 670px); /* Ajuste a largura conforme necessário */
-}
-
-.text-content h2 {
-    text-align: center; /* Centraliza o título */
-}
-
 
 .section3 {
     background-image: url('caminho/para/imagem3.jpg');
