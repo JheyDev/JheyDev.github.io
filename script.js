@@ -36,3 +36,4 @@ window.addEventListener('scroll', function() {
     nav.classList.remove('transparent');
   }
 });
+

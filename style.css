@@ -304,7 +304,7 @@ section:target {
     justify-content: center;
     align-items: center;
     padding: 20px; /* Diminui o padding para telas menores */
-    background: linear-gradient(rgba(0, 0, 0, 0.671), rgb(0, 0, 0)), url('assets/img/background-about.png');
+    background: linear-gradient(rgba(0, 0, 0, 0.671), rgb(0, 0, 0)), url('assets/img/background.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -397,11 +397,156 @@ p {
     }
 }
 
-.section3 {
-    background-image: url('caminho/para/imagem3.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
+#section3 {
+    padding: 40px 20px;
+    background: #1e1e1e;
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.842), rgba(0, 0, 0, 0.425)), url('assets/img/background.jpeg');
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Alinhar conteúdo ao topo */
+    height: 100vh; /* Ocupar a altura total da viewport */
 }
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.experience {
+    margin: 0; /* Remover margem superior */
+    padding: 20px;
+    position: relative; /* Permitir um controle de posicionamento */
+    top: -30px; /* Posicionar a experiência no topo */
+}
+
+.experience h2 {
+    color: #ff8800;
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+.experience p {
+    color: #ccc;
+    font-size: 1em;
+    margin-bottom: 10px;
+    font-family: 'mesveda';
+}
+
+
+.skills-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.skill {
+    background: #3333333f;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgb(0, 0, 0);
+    text-align: center;
+    flex: 1 1 120px;
+    min-width: 120px; /* Define um tamanho mínimo para evitar a alteração brusca */
+    min-height: 120px; /* Define a altura mínima */
+    transition: transform 0.3s ease, background 0.3s ease, opacity 0.3s ease;
+    opacity: 0.9;
+    font-size: 20px;
+}
+
+.skill:hover {
+    transform: scale(1.1); /* Escala a caixa sem mudar seu tamanho diretamente */
+    background: #000000;
+    opacity: 1;
+}
+
+.skill i {
+    font-size: 30px;
+    color: #f4f4f4;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.skill:hover i {
+    color: #ff8800;
+}
+
+.skill h2 {
+    margin-bottom: 5px;
+    color: #ff8800;
+    font-size: 0.8em;
+    transition: color 0.3s ease;
+    letter-spacing: 3px;
+}
+
+.skill:hover h2 {
+    color: #ffffff3f;
+    transform: scale(0.9); /* Escala o texto em vez de alterar o font-size */
+}
+
+.skill p {
+    color: rgba(204, 204, 204, 0.301);
+    font-size: 0.9em;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.skill:hover p {
+    color: #fff;
+    transform: scale(1.2); /* Escala o parágrafo em vez de alterar o font-size */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .skills-row {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .skill {
+        flex: 1 1 120px;
+        max-width: 300px;
+    }
+
+    .skill h2 {
+        font-size: 0.4em;
+    }
+
+    .experience {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .skill {
+        flex: 1 1 90px;
+        max-width: 120px;
+    }
+
+    .skill i {
+        font-size: 25px;
+    }
+
+    .skill h2 {
+        font-size: 0.4em;
+        letter-spacing: 2px;
+    }
+
+    .skill p {
+        font-size: 0.5em;
+        letter-spacing: 2px;
+    }
+
+    .experience p {
+        font-size: 1em;
+    }
+}
+
+
 
 .footer-company-name {
     color: rgba(255, 255, 255, 0.336);
