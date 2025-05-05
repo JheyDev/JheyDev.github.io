@@ -1,136 +1,227 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>DevArt</title>
-        <link rel="stylesheet" href="style.css">
-        <style>
-            /* Coloque aqui seu CSS */
-        </style>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-        <link rel="icon" href="assets/img/Icons/Logo.png" type="image/x-icon">
-    </head>
+ <html lang="pt-BR">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JheyArt</title>
+  <link rel="shortcut icon" href="assets/img/logo.svg" type="image/x-icon">
+  <link rel="stylesheet" href="style/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+ </head>
+ <body>
+  <div id="home-page">
+   <button id="btn-start">Iniciar</button>
+   <div id="code-effect-container">
+    <div id="terminal-prompt"></div>
+    <div id="code-effect"></div>
+   </div>
+   <div id="access-granted-large" style="display: none;">ACESSO LIBERADO</div>
+   <audio id="typing-sound" src="assets/audio/typing.mp3" preload="auto" loop></audio>
+   <audio id="mechanical-sound" src="assets/audio/click.mp3" preload="auto"></audio>
+   <audio id="window-open-sound" src="assets/audio/open.mp3" preload="auto"></audio>
+  </div>
+
+  <div id="portfolio-page" style="display: none;">
+   <header>
+    <nav class="main-nav">
+     <div class="logo-container">
+      <img src="assets/img/logo.svg" alt="Logo JheyArt" class="logo">
+      <span class="logo-text">JheyArt</span>
+     </div>
+     <button class="hamburger-menu">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+     </button>
+     <ul class="nav-links">
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#resume">Resume</a></li>
+      <li><a href="#portfolio-home">Portfolio</a></li>
+      <li><a href="#contact">Contacts</a></li>
+     </ul>
+     <div class="social-icons">
+      <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+     </div>
+    </nav>
+   </header>
+   <main>
+    <section id="about" class="parent-section about-section">
+     <div class="about-container">
+      <div class="about-image">
+       <img src="assets/img/perfil.png" alt="[Sua Descrição]" class="profile-image">
+      </div>
+      <div class="about-text">
+       <h2>&lt; About Me /&gt;</h2>
+       <p>&lt; Olá! Sou <strong>Jennyfer</strong>, desenvolvedora web frontend e designer digital. Tenho paixão por criar experiências visuais marcantes e interfaces funcionais, combinando criatividade e lógica. No <strong>Frontend</strong>, trabalho com &gt;
+        <strong class="tech-highlight">HTML5, CSS3 e JavaScript (ES6+)</strong> &lt;, construindo páginas responsivas, dinâmicas e otimizadas. /&gt;
+    </p>
+    <p>&lt; Como <strong>Designer</strong>, utilizo ferramentas como &gt;
+        <strong class="tech-highlight">Canva e noções de Photoshop</strong> &lt; para desenvolver identidades visuais, interfaces e materiais digitais com apelo visual e clareza de comunicação. /&gt;
+    </p>
+    <p>&lt; Minha abordagem se destaca pelo uso estratégico de <strong class="tech-highlight">Inteligência Artificial</strong>, aplicando <strong>prompts otimizados</strong> para gerar conteúdos, ideias visuais e acelerar processos criativos e técnicos. /&gt;
+    </p>
+    <p>&lt; Acredito na fusão entre design e desenvolvimento para entregar soluções completas, intuitivas e alinhadas com os objetivos de cada projeto. Estou sempre em busca de desafios que expandam minha criatividade e domínio técnico. /&gt;</p>
     
-<body>
-    <header>
-        <nav>
-            <a class="rotacionar" href="#">
-              <img class="logoimg" src="assets/img/Icons/Logo.png" alt="Logo" style="vertical-align: middle;">
-              <span class="logo" style="position: relative; left: -50px; opacity: 0;">Dev<span style="color:#ff8800">A</span>rt<span style="color:#ff8800">✧</span></span>
-            </a>
-            <div class="mobile-menu">
-              <div class="line1"></div>
-              <div class="line2"></div>
-              <div class="line3"></div>
+    
+       <div class="about-icons">
+        <i class="fab fa-html5"></i>
+        <i class="fab fa-css3-alt"></i>
+        <i class="fab fa-js-square"></i>
+        <i class="fa-solid fa-robot"></i>
+        <i class="fa-solid fa-pen-nib"></i>
+       </div>
+      </div>
+     </div>
+    </section>
+
+    <section id="resume" class="parent-section resume-section">
+     <h2>&lt; Resume /&gt;</h2>
+     <div class="resume-container">
+      <div class="resume-column">
+       <h3>&lt; Experience & Education /&gt;</h3>
+       <div class="resume-items">
+        <div class="resume-item">
+         <h4>2020-Present: [Seu Cargo Atual] at [Sua Empresa Atual]</h4>
+         <p>[Breve descrição das suas responsabilidades]</p>
+        </div>
+        <div class="resume-item">
+         <h4>2018-2020: [Cargo Anterior] at [Empresa Anterior]</h4>
+         <p>[Breve descrição das suas responsabilidades anteriores]</p>
+        </div>
+        <div class="resume-item education">
+         <h4>2016-2020: PhD in Computer Science</h4>
+         <p>Bachelor's Degree in Computer Science</p>
+        </div>
+        <div class="resume-item education">
+         <h4>2012-2016: [Seu Curso de Graduação]</h4>
+         <p>[Nome da sua Universidade]</p>
+        </div>
+       </div>
+      </div>
+      <div class="resume-column certifications-column">
+       <h3>&lt; Certifications /&gt;</h3>
+       <div class="certifications-list">
+        <div class="certification-item">
+         <h4>2018-2022: Certificate in React and Redux, Node.js Developer Course</h4>
+         <p>Harvard University</p>
+        </div>
+        <div class="certification-item">
+         <h4>2016-2020: Advanced Data Analytics with Big data Tools</h4>
+         <p>Utilized bid data tools for advanced analytics and insights.</p>
+        </div>
+        <div class="certification-item">
+         <h4>2010-2012: Certification in Full Stack Web Development</h4>
+         <p>Oxford University</p>
+        </div>
+        <div class="certification-item">
+         <h4>2016-2020: Certificate in React and Redux, Node.js Developer Course</h4>
+         <p>Oxford University</p>
+        </div>
+        <div class="certification-item">
+         <h4>2018-2022: Cloud-Native Application Architectures</h4>
+         <p>Studied best practices for designing cloud-native applications.</p>
+        </div>
+        <div class="certification-item">
+         <h4>2016-2020: AI-Driven User Experience Personalization</h4>
+         <p>Leveraged AI to personalize user experiences based on behavior.</p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+
+    <section id="portfolio-home" class="parent-section">
+        <h2>&lt; Portfolio &gt;</h2>
+        <div id="home-content">
+            <p>&lt; Explore meus projetos focados em &gt;</p>
+            <div id="home-expertise">
+                <button id="home-btn-frontend" class="expertise-button" data-filter="frontend">&lt; Frontend Development /&gt;</button>
+                <button id="home-btn-design" class="expertise-button" data-filter="design">&lt; UI/UX Design /&gt;</button>
             </div>
-            <ul class="nav-list">
-              <li><a href="#section1" class="nav-link">Inicio</a></li>
-              <li><a href="#section2" class="nav-link">Sobre</a></li>
-              <li><a href="#section3" class="nav-link">Habilidades</a></li>
-              <li><a href="#section4" class="nav-link">Portfolio</a></li>
-              <li><a href="#section5" class="nav-link">Contato</a></li>
-            </ul>
-          </nav>
-          
-    </header>
-    <section class="section1" id="section1">
-        <div class="background"></div>
-        <div class="content">
-            <h1 class="titulo">Dev<span class="shine" style="color: #ff8800;">A</span>rt</h1>
-            <h1 class="subtitulo" data-text="PORTFOLIO"></h1>
-            <div class="redes-sociais">            
-                <a href="https://github.com/JheyDev" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/jennyfersr/" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://wa.me/5541984323949" target="_blank" class="social-icon"><i class="fab fa-whatsapp"></i></a>
-            </div>
+            <p>&lt; Utilize os filtros abaixo para ver projetos específicos. /&gt;</p>
+        </div>
+        <div id="filter-nav">
+            <button id="btn-all" class="parent-button" data-filter="all">Todos</button>
+            <button class="parent-button" data-filter="frontend">Frontend</button>
+            <button class="parent-button" data-filter="design">Design</button>
         </div>
     </section>
     
-    
-    
-    <section class="section2" id="section2">
-        <div class="background"></div>
-        <div class="content">
-            <div class="profile-container">
-                <img src="assets/img/profile.png" alt="Foto de Jennyfer" class="profile-pic">
-                <div class="text-content">
-                    <h2>Sobre Mim</h2>
-                    <br>
-                    <br>
-                    <p>
-                        Oi! Meu nome é Jennyfer, mas pode me chamar de Jhey ou Jenny. Sou apaixonada por desenvolvimento frontend e inteligência artificial. Nos meus momentos de lazer, gosto de desenhar, jogar videogame, criar artes digitais, ler, fazer cursos, assistir filmes e séries, e ouvir Rock n’ roll. 😊
-                    </p>
-                    <img src="assets/img/signature.png" alt="Assinatura" class="signature">
-                </div>
-            </div>
-        </div>
-    </section>
-         
-    <section id="section3">
-        <div class="container">
-            <!-- Título no topo -->
-            
-    
-            <!-- Seção de Experiências no meio -->
-            <div class="experience">
-                <h2>Habilidades & Experiências</h2>
+    <section id="projects-section" class="parent-section" style="display: none;">
+        <h2>&lt; My Projects /&gt;</h2>
+        <div class="projects-grid">
+            <div class="project-item" data-category="frontend">
+                <img src="https://i.pinimg.com/736x/4e/17/84/4e17842f22f1390d4e544932f00e79f6.jpg" alt="Projeto 1">
+                <h3>Projeto 1 Frontend</h3>
+                <i class="fab fa-html5"></i>
+                <i class="fab fa-css3-alt"></i>
+                <i class="fab fa-js-square"></i>
+                
                 <br>
-                <p>Experiência na criação de interfaces interativas e responsivas, sempre focando na melhor experiência do usuário (UI/UX).
-<br>
-                    Além disso, tenho conhecimentos em Inteligência Artificial, que aplico para aprimorar meus projetos. Também desenvolvo artes digitais, como logos e materiais para redes sociais, garantindo uma identidade visual profissional para empresas.
-                    <br>
-                     Estou sempre em busca de novos desafios e oportunidades para aprender e crescer.</p>
+                <a href="#" target="_blank">Ver Projeto</a>
             </div>
-    
-            <!-- Seção de Skills abaixo das experiências -->
-            <div class="skills-row">
-                <div class="skill">
-                    <i class="fas fa-code"></i>
-                    <h2>Desenvolvimento</h2>
-                    <p>Experiência em HTML, CSS e JavaScript.</p>
-                </div>
-                <div class="skill">
-                    <i class="fas fa-paint-brush"></i>
-                    <h2>Design</h2>
-                    <p>Experiência em UI/UX e Artes Visuais</p>
-                </div>
-                <div class="skill">
-                    <i class="fas fa-robot"></i>
-                    <h2>IA</h2>
-                    <p>Conhecimento em Inteligência Artificial</p>
-                </div>
-                <div class="skill">
-                    <i class="fas fa-laptop-code"></i>
-                    <h2>Desenvolvimento Web</h2>
-                    <p>Criação de sites responsivos e dinâmicos.</p>
-                </div>
+            <div class="project-item" data-category="design logos">
+                <img src="https://i.pinimg.com/736x/fa/4b/39/fa4b393b88e3f68aaa9b4fb9e1b26523.jpg" alt="Logo 1">
+                <h3>Logo Projeto 1</h3>
+                <i class="fa-solid fa-pen-nib"></i>
+                <p>Breve descrição da logo.</p>
+                <a href="#" target="_blank">Ver Projeto</a>
+            </div>
+            <div class="project-item" data-category="frontend">
+                <img src="https://i.pinimg.com/736x/cd/fc/19/cdfc190f238cba26405c522d91bb053d.jpg" alt="Projeto 3">
+                <h3>Projeto 3 Frontend</h3>
+                <p>Breve descrição do Projeto 3.</p>
+                <a href="#" target="_blank">Ver Projeto</a>
+            </div>
+            <div class="project-item" data-category="design templates">
+                <img src="https://i.pinimg.com/736x/ae/0e/06/ae0e063890f9134561cc3b55334231e1.jpg" alt="Template 1">
+                <h3>Template Projeto 1</h3>
+                <p>Breve descrição do template.</p>
+                <a href="#" target="_blank">Ver Projeto</a>
+            </div>
+            <div class="project-item" data-category="design social-media">
+                <img src="https://i.pinimg.com/736x/d7/ba/7d/d7ba7d5e662937f3e1e7a8972a9c3a87.jpg" alt="Social Media 1">
+                <h3>Post Social Mídia 1</h3>
+                <p>Breve descrição do post.</p>
+                <a href="#" target="_blank">Ver Projeto</a>
+            </div>
+            <div class="project-item" data-category="design logos">
+                <img src="https://i.pinimg.com/736x/73/24/da/7324daee0903190950b8aa7ad2edbf2d.jpg" alt="Logo 2">
+                <h3>Logo Projeto 2</h3>
+                <p>Breve descrição da outra logo.</p>
+                <a href="#" target="_blank">Ver Projeto</a>
+            </div>
+            <div class="project-item" data-category="design templates">
+                <img src="https://i.pinimg.com/736x/ab/79/4d/ab794d8971e7f1ef8fb39c3a8c5d38fb.jpg" alt="Template 2">
+                <h3>Template Projeto 2</h3>
+                <p>Breve descrição do outro template.</p>
+                <a href="#" target="_blank">Ver Projeto</a>
+            </div>
+            <div class="project-item" data-category="design social-media">
+                <img src="https://i.pinimg.com/736x/cb/f6/17/cbf617e448758565613b126c68a484e1.jpg" alt="Social Media 2">
+                <h3>Post Social Mídia 2</h3>
+                <p>Outra breve descrição.</p>
+                <a href="#" target="_blank">Ver Projeto</a>
             </div>
         </div>
-    </section>
-    
-    
-    
-
-    <section id="section4"></section>
-        <h1>Seção 4</h1>
+        <button id="load-more-projects" class="parent-button">&lt; Ver Mais Projetos /&gt;</button>
     </section>
 
-    <section id="section5"></section>
-        <h1>Seção 5</h1>
-    </section>
-    
+    <section id="contact" class="parent-section">
+     <h2>Contato</h2>
+     <p>Sinta-se à vontade para entrar em contato comigo por e-mail:</p>
+     <p><a href="mailto:jhey.artdesign@gmail.com">jhey.artdesign@gmail.com</a></p>
+     </section>
+   </main>
+   <footer>
+    <p>&copy; Todos os direitos reservados com <span class="heart">♥</span> Jennyfer Ribeiro - 2025</p>
+   </footer>
+  </div>
 
-    <footer class="footer-distributed">
-            <div class="footer-left">
-                <p class="footer-company-name">
-                    Criado com <span class="heart">♥</span> por: <strong>Jennyfer Ribeiro</strong><br> Todos os direitos reservados
-                </p>
-            </div>
-            
-        </footer>      
-
-    <script src="script.js"></script>
-    <script src="mobile-navbar.js"></script>
-</body>
-</html>
+  <script src="scripts/main.js"></script>
+ </body>
+ </html>
