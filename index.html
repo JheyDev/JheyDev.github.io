@@ -1,227 +1,328 @@
 <!DOCTYPE html>
- <html lang="pt-BR">
- <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JheyArt</title>
-  <link rel="shortcut icon" href="assets/img/logo.svg" type="image/x-icon">
-  <link rel="stylesheet" href="style/main.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
- </head>
- <body>
-  <div id="home-page">
-   <button id="btn-start">Iniciar</button>
-   <div id="code-effect-container">
-    <div id="terminal-prompt"></div>
-    <div id="code-effect"></div>
-   </div>
-   <div id="access-granted-large" style="display: none;">ACESSO LIBERADO</div>
-   <audio id="typing-sound" src="assets/audio/typing.mp3" preload="auto" loop></audio>
-   <audio id="mechanical-sound" src="assets/audio/click.mp3" preload="auto"></audio>
-   <audio id="window-open-sound" src="assets/audio/open.mp3" preload="auto"></audio>
-  </div>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jennyfer Ribeiro - Desenvolvedora Front-end & UI/UX Designer</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <nav class="nav-container">
+            <div class="logo">
+                <span class="bracket">&lt;</span>
+                JheyArt
+                <span class="bracket">/&gt;</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#hero">Início</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#projects">Projetos</a></li>
+                <li><a href="#skills">Habilidades</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
 
-  <div id="portfolio-page" style="display: none;">
-   <header>
-    <nav class="main-nav">
-     <div class="logo-container">
-      <img src="assets/img/logo.svg" alt="Logo JheyArt" class="logo">
-      <span class="logo-text">JheyArt</span>
-     </div>
-     <button class="hamburger-menu">
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-     </button>
-     <ul class="nav-links">
-      <li><a href="#about">About Me</a></li>
-      <li><a href="#resume">Resume</a></li>
-      <li><a href="#portfolio-home">Portfolio</a></li>
-      <li><a href="#contact">Contacts</a></li>
-     </ul>
-     <div class="social-icons">
-      <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-      <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
-      <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-     </div>
-    </nav>
-   </header>
-   <main>
-    <section id="about" class="parent-section about-section">
-     <div class="about-container">
-      <div class="about-image">
-       <img src="assets/img/perfil.png" alt="[Sua Descrição]" class="profile-image">
-      </div>
-      <div class="about-text">
-       <h2>&lt; About Me /&gt;</h2>
-       <p>&lt; Olá! Sou <strong>Jennyfer</strong>, desenvolvedora web frontend e designer digital. Tenho paixão por criar experiências visuais marcantes e interfaces funcionais, combinando criatividade e lógica. No <strong>Frontend</strong>, trabalho com &gt;
-        <strong class="tech-highlight">HTML5, CSS3 e JavaScript (ES6+)</strong> &lt;, construindo páginas responsivas, dinâmicas e otimizadas. /&gt;
-    </p>
-    <p>&lt; Como <strong>Designer</strong>, utilizo ferramentas como &gt;
-        <strong class="tech-highlight">Canva e noções de Photoshop</strong> &lt; para desenvolver identidades visuais, interfaces e materiais digitais com apelo visual e clareza de comunicação. /&gt;
-    </p>
-    <p>&lt; Minha abordagem se destaca pelo uso estratégico de <strong class="tech-highlight">Inteligência Artificial</strong>, aplicando <strong>prompts otimizados</strong> para gerar conteúdos, ideias visuais e acelerar processos criativos e técnicos. /&gt;
-    </p>
-    <p>&lt; Acredito na fusão entre design e desenvolvimento para entregar soluções completas, intuitivas e alinhadas com os objetivos de cada projeto. Estou sempre em busca de desafios que expandam minha criatividade e domínio técnico. /&gt;</p>
-    
-    
-       <div class="about-icons">
-        <i class="fab fa-html5"></i>
-        <i class="fab fa-css3-alt"></i>
-        <i class="fab fa-js-square"></i>
-        <i class="fa-solid fa-robot"></i>
-        <i class="fa-solid fa-pen-nib"></i>
-       </div>
-      </div>
-     </div>
-    </section>
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero code-background"> <!-- Adicionado a classe 'code-background' aqui -->
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        Olá, eu sou <span class="highlight">Jennyfer Ribeiro</span>
+                    </h1>
+                    <h2 class="hero-subtitle">
+                        Desenvolvedora Web Front-end & UI/UX Designer Freelancer
+                    </h2>
+                    <p class="hero-description">
+                        Suas ideias transformadas em experiências digitais elegantes e funcionais.
+                    </p>
+                    <a href="#projects" class="cta-button">Ver Projetos</a>
+                </div>
+            </div>
+        </section>
 
-    <section id="resume" class="parent-section resume-section">
-     <h2>&lt; Resume /&gt;</h2>
-     <div class="resume-container">
-      <div class="resume-column">
-       <h3>&lt; Experience & Education /&gt;</h3>
-       <div class="resume-items">
-        <div class="resume-item">
-         <h4>2020-Present: [Seu Cargo Atual] at [Sua Empresa Atual]</h4>
-         <p>[Breve descrição das suas responsabilidades]</p>
-        </div>
-        <div class="resume-item">
-         <h4>2018-2020: [Cargo Anterior] at [Empresa Anterior]</h4>
-         <p>[Breve descrição das suas responsabilidades anteriores]</p>
-        </div>
-        <div class="resume-item education">
-         <h4>2016-2020: PhD in Computer Science</h4>
-         <p>Bachelor's Degree in Computer Science</p>
-        </div>
-        <div class="resume-item education">
-         <h4>2012-2016: [Seu Curso de Graduação]</h4>
-         <p>[Nome da sua Universidade]</p>
-        </div>
-       </div>
-      </div>
-      <div class="resume-column certifications-column">
-       <h3>&lt; Certifications /&gt;</h3>
-       <div class="certifications-list">
-        <div class="certification-item">
-         <h4>2018-2022: Certificate in React and Redux, Node.js Developer Course</h4>
-         <p>Harvard University</p>
-        </div>
-        <div class="certification-item">
-         <h4>2016-2020: Advanced Data Analytics with Big data Tools</h4>
-         <p>Utilized bid data tools for advanced analytics and insights.</p>
-        </div>
-        <div class="certification-item">
-         <h4>2010-2012: Certification in Full Stack Web Development</h4>
-         <p>Oxford University</p>
-        </div>
-        <div class="certification-item">
-         <h4>2016-2020: Certificate in React and Redux, Node.js Developer Course</h4>
-         <p>Oxford University</p>
-        </div>
-        <div class="certification-item">
-         <h4>2018-2022: Cloud-Native Application Architectures</h4>
-         <p>Studied best practices for designing cloud-native applications.</p>
-        </div>
-        <div class="certification-item">
-         <h4>2016-2020: AI-Driven User Experience Personalization</h4>
-         <p>Leveraged AI to personalize user experiences based on behavior.</p>
-        </div>
-       </div>
-      </div>
-     </div>
-    </section>
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <h2 class="section-title">Sobre <span class="highlight">Mim</span></h2>
+                <div class="section-divider"></div>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>
+                            Sou desenvolvedora front-end apaixonada por criar experiências digitais únicas e funcionais. 
+                            Atualmente cursando Análise e Desenvolvimento de Sistemas na Uniasselvi desde Julho de 2023, 
+                            combino conhecimento técnico sólido com habilidades criativas em design.
+                        </p>
+                        <p>
+                            Minha expertise vai além do código - domino ferramentas como Canva e Photoshop para criar 
+                            interfaces visuais impactantes. Utilizo inteligência artificial para otimizar meus processos 
+                            de desenvolvimento e design, sempre buscando eficiência e inovação.
+                        </p>
+                        <p>
+                            Estudante de Inglês desde fevereiro de 2025 no Instituto The House em São José dos Pinhais. 
+                           Tenho como hobbie, estudar, jogar videogame, me atualizar sobre novas tecnologias e tendências de design. 
+                            Estou sempre aberta a novos desafios e oportunidades de colaboração.
+                        </p>
+                    </div>
+                    <div class="about-highlights">
+                        <div class="highlight-card">
+                            <div class="highlight-icon">🎓</div>
+                            <h3>Formação Acadêmica</h3>
+                            <p>Estudante de Análise e Desenvolvimento de Sistemas na Uniasselvi (desde Jul/2023)</p>
+                        </div>
+                        <div class="highlight-card">
+                            <div class="highlight-icon">🎨</div>
+                            <h3>Design Skills</h3>
+                            <p>Especialista em Canva e Adobe Photoshop para criação visual</p>
+                        </div>
+                        <div class="highlight-card">
+                            <div class="highlight-icon">🤖</div>
+                            <h3>IA & Produtividade</h3>
+                            <p>Utilizo ferramentas de IA para otimizar processos e workflow</p>
+                        </div>
+                        <div class="highlight-card">
+                            <div class="highlight-icon">🌍</div>
+                            <h3>Inglês Técnico</h3>
+                            <p>Conhecimento em leitura de códigos e fluidez em inglês básico Técnico</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <section id="portfolio-home" class="parent-section">
-        <h2>&lt; Portfolio &gt;</h2>
-        <div id="home-content">
-            <p>&lt; Explore meus projetos focados em &gt;</p>
-            <div id="home-expertise">
-                <button id="home-btn-frontend" class="expertise-button" data-filter="frontend">&lt; Frontend Development /&gt;</button>
-                <button id="home-btn-design" class="expertise-button" data-filter="design">&lt; UI/UX Design /&gt;</button>
+        <!-- Projects Section -->
+        <section id="projects" class="projects">
+            <div class="container">
+                <h2 class="section-title">Meus <span class="highlight">Projetos</span></h2>
+                <div class="section-divider"></div>
+                <div class="projects-grid">
+                    <!-- IMPORTANTE: Substitua os projetos abaixo pelos seus projetos reais! -->
+                    <!-- Altere a imagem (src e alt), título, descrição, tecnologias e links. -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <!-- Use imagens reais dos seus projetos aqui. Adicione loading="lazy" para otimização. -->
+                            <img src="logo-rock.png" alt="Captura de tela de um e-commerce moderno" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h3>Rock'n Blues Coffee</h3>
+                            <p>Uma cafeteria online com um conceito musical único, combinando a intensidade do Rock e a melancolia do Blues com cafés de alta qualidade. Este projeto, desenvolvido como um desafio de Front-end.</p>
+                            <div class="project-tech">
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>JavaScript</span>
+                                <!-- Adicione outras tecnologias que você usou neste projeto -->
+                            </div>
+                            <div class="project-buttons">
+                                <a href="https://jheydev.github.io/rocknbluesrock/" class="btn-primary" target="_blank">Ver Projeto Online</a>
+                                <a href="https://github.com/JheyDev/rocknbluesrock" class="btn-secondary" target="_blank">Código no GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Captura de tela de um dashboard de analytics" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h3>Nome do seu Projeto 2</h3>
+                            <p>Outra breve descrição do seu segundo projeto. Fale sobre as funcionalidades principais.</p>
+                            <div class="project-tech">
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>JavaScript</span>
+                                <!-- Adicione outras tecnologias que você usou neste projeto -->
+                            </div>
+                            <div class="project-buttons">
+                                <a href="#" class="btn-primary" target="_blank">Ver Projeto Online</a>
+                                <a href="#" class="btn-secondary" target="_blank">Código no GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Captura de tela de um aplicativo de tarefas" loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h3>Nome do seu Projeto 3</h3>
+                            <p>Descrição do terceiro projeto. Inclua o que você aprendeu ou os desafios superados.</p>
+                            <div class="project-tech">
+                                <span>HTML5</span>
+                                <span>CSS3</span>
+                                <span>JavaScript</span>
+                                <!-- Adicione outras tecnologias que você usou neste projeto -->
+                            </div>
+                            <div class="project-buttons">
+                                <a href="#" class="btn-primary" target="_blank">Ver Projeto Online</a>
+                                <a href="#" class="btn-secondary" target="_blank">Código no GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Você pode adicionar mais project-cards aqui conforme tiver mais projetos -->
+                    
+                </div>
             </div>
-            <p>&lt; Utilize os filtros abaixo para ver projetos específicos. /&gt;</p>
-        </div>
-        <div id="filter-nav">
-            <button id="btn-all" class="parent-button" data-filter="all">Todos</button>
-            <button class="parent-button" data-filter="frontend">Frontend</button>
-            <button class="parent-button" data-filter="design">Design</button>
-        </div>
-    </section>
-    
-    <section id="projects-section" class="parent-section" style="display: none;">
-        <h2>&lt; My Projects /&gt;</h2>
-        <div class="projects-grid">
-            <div class="project-item" data-category="frontend">
-                <img src="https://i.pinimg.com/736x/4e/17/84/4e17842f22f1390d4e544932f00e79f6.jpg" alt="Projeto 1">
-                <h3>Projeto 1 Frontend</h3>
-                <i class="fab fa-html5"></i>
-                <i class="fab fa-css3-alt"></i>
-                <i class="fab fa-js-square"></i>
-                
-                <br>
-                <a href="#" target="_blank">Ver Projeto</a>
-            </div>
-            <div class="project-item" data-category="design logos">
-                <img src="https://i.pinimg.com/736x/fa/4b/39/fa4b393b88e3f68aaa9b4fb9e1b26523.jpg" alt="Logo 1">
-                <h3>Logo Projeto 1</h3>
-                <i class="fa-solid fa-pen-nib"></i>
-                <p>Breve descrição da logo.</p>
-                <a href="#" target="_blank">Ver Projeto</a>
-            </div>
-            <div class="project-item" data-category="frontend">
-                <img src="https://i.pinimg.com/736x/cd/fc/19/cdfc190f238cba26405c522d91bb053d.jpg" alt="Projeto 3">
-                <h3>Projeto 3 Frontend</h3>
-                <p>Breve descrição do Projeto 3.</p>
-                <a href="#" target="_blank">Ver Projeto</a>
-            </div>
-            <div class="project-item" data-category="design templates">
-                <img src="https://i.pinimg.com/736x/ae/0e/06/ae0e063890f9134561cc3b55334231e1.jpg" alt="Template 1">
-                <h3>Template Projeto 1</h3>
-                <p>Breve descrição do template.</p>
-                <a href="#" target="_blank">Ver Projeto</a>
-            </div>
-            <div class="project-item" data-category="design social-media">
-                <img src="https://i.pinimg.com/736x/d7/ba/7d/d7ba7d5e662937f3e1e7a8972a9c3a87.jpg" alt="Social Media 1">
-                <h3>Post Social Mídia 1</h3>
-                <p>Breve descrição do post.</p>
-                <a href="#" target="_blank">Ver Projeto</a>
-            </div>
-            <div class="project-item" data-category="design logos">
-                <img src="https://i.pinimg.com/736x/73/24/da/7324daee0903190950b8aa7ad2edbf2d.jpg" alt="Logo 2">
-                <h3>Logo Projeto 2</h3>
-                <p>Breve descrição da outra logo.</p>
-                <a href="#" target="_blank">Ver Projeto</a>
-            </div>
-            <div class="project-item" data-category="design templates">
-                <img src="https://i.pinimg.com/736x/ab/79/4d/ab794d8971e7f1ef8fb39c3a8c5d38fb.jpg" alt="Template 2">
-                <h3>Template Projeto 2</h3>
-                <p>Breve descrição do outro template.</p>
-                <a href="#" target="_blank">Ver Projeto</a>
-            </div>
-            <div class="project-item" data-category="design social-media">
-                <img src="https://i.pinimg.com/736x/cb/f6/17/cbf617e448758565613b126c68a484e1.jpg" alt="Social Media 2">
-                <h3>Post Social Mídia 2</h3>
-                <p>Outra breve descrição.</p>
-                <a href="#" target="_blank">Ver Projeto</a>
-            </div>
-        </div>
-        <button id="load-more-projects" class="parent-button">&lt; Ver Mais Projetos /&gt;</button>
-    </section>
+        </section>
 
-    <section id="contact" class="parent-section">
-     <h2>Contato</h2>
-     <p>Sinta-se à vontade para entrar em contato comigo por e-mail:</p>
-     <p><a href="mailto:jhey.artdesign@gmail.com">jhey.artdesign@gmail.com</a></p>
-     </section>
-   </main>
-   <footer>
-    <p>&copy; Todos os direitos reservados com <span class="heart">♥</span> Jennyfer Ribeiro - 2025</p>
-   </footer>
-  </div>
+        <!-- Skills Section -->
+        <section id="skills" class="skills">
+            <div class="container">
+                <h2 class="section-title">Minhas <span class="highlight">Habilidades</span></h2>
+                <div class="section-divider"></div>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="13,2 3,14 12,14 11,22 21,10 12,10 13,2"></polygon>
+                            </svg>
+                        </div>
+                        <h3>HTML5</h3>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="95"></div>
+                        </div>
+                        <span class="skill-percentage">95%</span>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2L2 7L12 12L22 7L12 2Z"></path>
+                                <path d="M2 17L12 22L22 17"></path>
+                                <path d="M2 12L12 17L22 12"></path>
+                            </svg>
+                        </div>
+                        <h3>CSS3</h3>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="90"></div>
+                        </div>
+                        <span class="skill-percentage">90%</span>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="16,18 22,12 16,6"></polyline>
+                                <polyline points="8,6 2,12 8,18"></polyline>
+                            </svg>
+                        </div>
+                        <h3>JavaScript</h3>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="85"></div>
+                        </div>
+                        <span class="skill-percentage">85%</span>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2A10 10 0 1 0 22 12A10 10 0 0 0 12 2Z"></path>
+                                <path d="M8 12L11 15L16 9"></path>
+                            </svg>
+                        </div>
+                        <h3>IA (Design & Produtividade)</h3>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="80"></div>
+                        </div>
+                        <span class="skill-percentage">80%</span>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <circle cx="9" cy="9" r="2"></circle>
+                                <path d="M21 15L16 10L5 21"></path>
+                            </svg>
+                        </div>
+                        <h3>Canva</h3>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="88"></div>
+                        </div>
+                        <span class="skill-percentage">88%</span>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14.7 6.3A1 1 0 0 0 13 5H5A2 2 0 0 0 3 7V19A2 2 0 0 0 5 21H19A2 2 0 0 0 21 19V11A1 1 0 0 0 19.3 9.3L14.7 6.3Z"></path>
+                                <polyline points="3 7 9 13 21 1"></polyline>
+                            </svg>
+                        </div>
+                        <h3>Adobe Photoshop</h3>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-progress="75"></div>
+                        </div>
+                        <span class="skill-percentage">75%</span>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <script src="scripts/main.js"></script>
- </body>
- </html>
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2 class="section-title">Vamos <span class="highlight">Conversar!</span></h2>
+                <div class="section-divider"></div>
+                <div class="contact-content-social"> <!-- Nova classe para o layout de contato -->
+                    <div class="contact-info">
+                        <h3>Entre em Contato</h3>
+                        <p>Estou sempre interessada em novos projetos e oportunidades de colaboração. Vamos criar algo incrível juntas!</p>
+                        <div class="social-links">
+    <a href="https://www.linkedin.com/in/jennyferribeiro/" target="_blank" class="social-link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M16 8A6 6 0 0 1 22 14V21H18V14A2 2 0 0 0 16 12A2 2 0 0 0 14 14V21H10V9H14V11A6 6 0 0 1 16 8Z"/>
+            <rect x="2" y="9" width="4" height="12"/>
+            <circle cx="4" cy="4" r="2"/>
+        </svg>
+        <span>LinkedIn</span>
+    </a>
+
+    <a href="https://github.com/JheyDev" target="_blank" class="social-link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C5.373 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.6.11.82-.257.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.043-1.61-4.043-1.61-.546-1.387-1.332-1.758-1.332-1.758-1.09-.744.083-.729.083-.729 1.206.085 1.838 1.238 1.838 1.238 1.07 1.833 2.81 1.304 3.492.996.108-.775.419-1.304.762-1.605-2.665-.3-5.466-1.333-5.466-5.932 0-1.31.465-2.383 1.235-3.22-.124-.3-.535-1.52.117-3.176 0 0 1.007-.323 3.3-.123C12.215 5.5 13.06 5.25 14 5.25c.94 0 1.786.25 2.56.75 2.29-.2 3.298.123 3.298.123.652 1.656.24 2.876.12 3.176.77.837 1.233 1.91 1.233 3.22 0 4.61-2.805 5.626-5.475 5.922.43.372.823 1.102.823 2.222v3.293c0 .32.22.69.825.57C20.565 21.8 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+        </svg>
+        <span>GitHub</span>
+    </a>
+
+    <a href="mailto:jennyfer.souzar@gmail.com" target="_blank" class="social-link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M22 6C22 4.9 21.1 4 20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6ZM20 6L12 11L4 6H20ZM20 18H4V8L12 13L20 8V18Z"/>
+        </svg>
+        <span>Gmail</span>
+    </a>
+
+    <a href="https://wa.me/41996808150" target="_blank" class="social-link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm3.5 15.688c-.2.5-.9.7-1.4.5-.4-.1-2.2-.9-2.5-1-.3-.1-.5-.2-.7-.2-.2 0-.4 0-.6.2-.2.2-.8.8-.8 1.9s.8 1.9 1 2.2c.2.3 1.7 2.8 4.2 3.8 2.5 1.1 3.2 1.1 3.8.9.5-.2.8-.7 1-.9.2-.2.6-.4.7-.6.2-.2.4-.4.4-.6s-.1-.5-.2-.7c-.2-.2-.5-.5-.7-.7-.2-.2-.4-.3-.6-.3-.2 0-.4 0-.6.2-.2.2-.8.8-.8 1.9zM19 12c0 3.86-3.14 7-7 7-1.12 0-2.19-.28-3.13-.78L4.5 19.5l1.04-3.56A7.002 7.002 0 0 1 5 12c0-3.86 3.14-7 7-7s7 3.14 7 7zM12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0 1.5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5.67-1.5 1.5-1.5zm0 5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+        </svg>
+        <span>WhatsApp</span>
+    </a>
+</div>
+                            <!-- Você pode adicionar mais links sociais aqui, como Instagram, Behance, etc. -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Jennyfer Ribeiro. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

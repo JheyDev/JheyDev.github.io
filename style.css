@@ -1,0 +1,681 @@
+/* Reset de CSS básico para remover margens e preenchimentos padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Definição de variáveis CSS para cores e gradientes, facilitando a manutenção */
+:root {
+    --primary-color: #8B5CF6; /* Roxo principal */
+    --primary-dark: #7C3AED; /* Roxo mais escuro */
+    --background: #0a0a0a; /* Fundo preto quase total */
+    --surface: #1a1a1a; /* Superfície para cards e seções */
+    --surface-light: #2a2a2a; /* Superfície um pouco mais clara */
+    --text-primary: #ffffff; /* Cor principal do texto (branco) */
+    --text-secondary: #a1a1aa; /* Cor secundária do texto (cinza claro) */
+    --text-muted: #71717a; /* Cor de texto mais suave (cinza médio) */
+    --border: #3f3f46; /* Cor da borda */
+    --gradient: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%); /* Gradiente roxo */
+}
+
+/* Estilos globais do corpo da página */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--background);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden; /* Previne rolagem horizontal indesejada */
+}
+
+/* Estilo do container principal para centralizar o conteúdo */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Header & Navigation */
+.navbar {
+    position: fixed; /* Barra de navegação fixa no topo */
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(10, 10, 10, 0.9); /* Fundo semi-transparente */
+    backdrop-filter: blur(10px); /* Efeito de desfoque no fundo */
+    border-bottom: 1px solid var(--border); /* Borda inferior */
+    z-index: 1000; /* Garante que a barra esteja acima de outros elementos */
+    transition: all 0.3s ease; /* Transição suave para mudanças de estilo */
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.bracket {
+    color: var(--primary-color); /* Cor dos colchetes no logo */
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none; /* Remove marcadores de lista */
+    gap: 2rem; /* Espaçamento entre os itens do menu */
+}
+
+.nav-menu a {
+    color: var(--text-secondary);
+    text-decoration: none; /* Remove sublinhado dos links */
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative; /* Para o efeito de sublinhado animado */
+}
+
+.nav-menu a:hover {
+    color: var(--primary-color); /* Muda a cor ao passar o mouse */
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gradient); /* Gradiente para o sublinhado */
+    transition: width 0.3s ease; /* Animação do sublinhado */
+}
+
+.nav-menu a:hover::after,
+.nav-menu a.active::after { /* O sublinhado também aparece quando o link está ativo */
+    width: 100%;
+}
+
+.hamburger {
+    display: none; /* Escondido por padrão, visível apenas em telas menores */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: var(--text-primary);
+    margin: 3px 0;
+    transition: 0.3s; /* Transição para o ícone de hambúrguer */
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh; /* Ocupa a altura total da viewport */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: linear-gradient(135deg, var(--background) 0%, #1a0b2e 100%); /* Gradiente de fundo */
+    overflow: hidden; /* Garante que o fundo de código não vaze */
+}
+
+/* Efeito de fundo com códigos em cascata */
+.code-background {
+    background-image: 
+        linear-gradient(rgba(139, 92, 246, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(139, 92, 246, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px; /* Tamanho das "células" do grid */
+    animation: codeFall 20s linear infinite; /* Animação para o efeito de queda */
+}
+
+@keyframes codeFall {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 0 100%; /* Move o fundo para baixo */
+    }
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 800px;
+    animation: fadeInUp 1s ease-out; /* Animação de entrada */
+    position: relative; /* Garante que o conteúdo fique acima do fundo animado */
+    z-index: 10; /* Coloca o conteúdo do hero acima do background */
+}
+
+.hero-title {
+    font-size: clamp(2rem, 4vw, 3rem); /* Reduzido o tamanho da fonte */
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+    font-weight: 400;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.hero-description {
+    font-size: clamp(1rem, 1vw, 1.25rem);
+    color: var(--text-muted);
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.highlight {
+    background: var(--gradient); /* Aplica o gradiente ao texto */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: var(--gradient);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px; /* Botão arredondado */
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3); /* Sombra suave */
+}
+
+.cta-button:hover {
+    transform: translateY(-2px); /* Efeito de "levantar" ao passar o mouse */
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4), 0 0 15px var(--primary-color); /* Adicionado brilho roxo */
+}
+
+/* Section Styles */
+section {
+    padding: 5rem 0; /* Preenchimento padrão para todas as seções */
+    /* Adiciona um scroll-margin-top para que a rolagem suave pare abaixo do cabeçalho fixo */
+    scroll-margin-top: 70px; /* Altura aproximada do seu cabeçalho */
+}
+
+.section-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.section-divider {
+    width: 80px;
+    height: 4px;
+    background: var(--gradient);
+    margin: 0 auto 3rem auto;
+    border-radius: 2px;
+}
+
+/* About Section */
+.about {
+    background: var(--surface);
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Duas colunas */
+    gap: 4rem;
+    align-items: start;
+}
+
+.about-text p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+.about-highlights {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Duas colunas para os destaques */
+    gap: 1.5rem;
+}
+
+.highlight-card {
+    background: var(--background);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    transition: all 0.3s ease;
+}
+
+.highlight-card:hover {
+    border-color: var(--primary-color); /* Borda roxa ao passar o mouse */
+    transform: translateY(-5px); /* Efeito de "levantar" */
+}
+
+.highlight-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.highlight-card h3 {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.highlight-card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Projects Section */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Grid responsivo de projetos */
+    gap: 2rem;
+}
+
+.project-card {
+    background: var(--surface);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary-color);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.project-image {
+    position: relative; /* Necessário para posicionar o pseudo-elemento ::after */
+    overflow: hidden;
+    height: 200px;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease; /* Mantém a transição de transformação */
+}
+
+/* Overlay para escurecer a imagem no hover */
+.project-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Camada escura semi-transparente */
+    opacity: 0; /* Inicialmente transparente */
+    transition: opacity 0.3s ease; /* Transição suave para a opacidade */
+}
+
+.project-card:hover .project-image::after {
+    opacity: 1; /* Totalmente opaco no hover */
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.05); /* Efeito de zoom na imagem */
+}
+
+.project-content {
+    padding: 1.5rem;
+}
+
+.project-content h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.project-content p {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.project-tech span {
+    background: var(--background);
+    color: var(--primary-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.project-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-align: center;
+    flex: 1; /* Faz com que os botões ocupem o mesmo espaço */
+}
+
+.btn-primary {
+    background: var(--gradient);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+.btn-secondary:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Skills Section */
+.skills {
+    background: var(--surface);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.skill-item {
+    background: var(--background);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.skill-item:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-5px);
+}
+
+.skill-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 1rem auto;
+    color: var(--primary-color);
+}
+
+.skill-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.skill-item h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.skill-bar {
+    background: var(--surface-light);
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.skill-progress {
+    height: 100%;
+    background: var(--gradient);
+    border-radius: 4px;
+    width: 0; /* Começa com largura 0 para a animação */
+    transition: width 2s ease-in-out; /* Animação da barra de progresso */
+}
+
+.skill-percentage {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* Contact Section */
+/* Removido o layout de grid para o formulário, agora focado nos links sociais */
+.contact-content-social {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza o conteúdo */
+    gap: 2rem;
+    text-align: center;
+}
+
+.contact-info {
+    max-width: 600px; /* Limita a largura do texto de contato */
+    margin: 0 auto;
+}
+
+.contact-info h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.contact-info p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.social-links {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os links quebrem linha em telas menores */
+    justify-content: center; /* Centraliza os links */
+    gap: 1rem;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    padding: 1rem;
+    background: var(--surface);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    transition: all 0.3s ease;
+    min-width: 100px; /* Garante um tamanho mínimo para os botões sociais */
+    justify-content: center; /* Centraliza o texto e ícone dentro do botão */
+}
+
+.social-link:hover {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    transform: translateY(-5px); /* Efeito de "levantar" */
+}
+
+.social-link svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Removido estilos para o formulário de contato */
+/* .contact-form { ... } */
+/* .form-group { ... } */
+/* .form-group input, .form-group textarea { ... } */
+/* .form-group input:focus, .form-group textarea:focus { ... } */
+/* .submit-button { ... } */
+/* .form-message { ... } */
+
+
+/* Footer */
+.footer {
+    background: var(--background);
+    border-top: 1px solid var(--border);
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.footer p {
+    color: var(--text-muted);
+}
+
+/* Keyframe Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0) translateX(-50%);
+    }
+    40% {
+        transform: translateY(-10px) translateX(-50%);
+    }
+    60% {
+        transform: translateY(-5px) translateX(-50%);
+    }
+}
+
+/* Classes para o Intersection Observer */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%; /* Esconde o menu fora da tela */
+        top: 70px;
+        flex-direction: column;
+        background-color: var(--surface);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        padding: 2rem 0;
+    }
+
+    .nav-menu.active {
+        left: 0; /* Mostra o menu */
+    }
+
+    .hamburger {
+        display: flex; /* Mostra o ícone de hambúrguer */
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0; /* Esconde a linha do meio */
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg); /* Gira a linha de cima */
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg); /* Gira a linha de baixo */
+    }
+
+    .about-content {
+        grid-template-columns: 1fr; /* Uma coluna em telas menores */
+        gap: 2rem;
+    }
+
+    .about-highlights {
+        grid-template-columns: 1fr;
+    }
+
+    /* Ajuste para o layout de contato em telas menores */
+    .contact-content-social {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .social-link {
+        width: 100%; /* Ocupa a largura total em telas pequenas */
+    }
+
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-buttons {
+        flex-direction: column; /* Botões de projeto empilhados */
+    }
+
+    .container {
+        padding: 0 1rem; /* Menor preenchimento lateral */
+    }
+
+    section {
+        padding: 3rem 0; /* Menor preenchimento vertical */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content {
+        padding: 0 1rem;
+    }
+
+    .cta-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .highlight-card {
+        padding: 1rem;
+    }
+
+    .project-content {
+        padding: 1rem;
+    }
+
+    .skill-item {
+        padding: 1.5rem;
+    }
+}
