@@ -126,6 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+
 // Typing animation for hero title (optional enhancement): Animação de digitação para o título do Hero (opcional)
 function typeWriter(element, text, speed = 100) {
     let i = 0;
