@@ -280,7 +280,7 @@ section {
 /* Projects Section */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Grid responsivo de projetos */
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
 }
 
@@ -299,16 +299,20 @@ section {
 }
 
 .project-image {
-    position: relative; /* Necessário para posicionar o pseudo-elemento ::after */
+    position: relative; /* ESSENCIAL para posicionar os botões sobre a imagem */
     overflow: hidden;
     height: 200px;
+    /* Adicionando um display flex para centralizar os botões */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .project-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease; /* Mantém a transição de transformação */
+    transition: transform 0.3s ease;
 }
 
 /* Overlay para escurecer a imagem no hover */
@@ -319,17 +323,32 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4); /* Camada escura semi-transparente */
-    opacity: 0; /* Inicialmente transparente */
-    transition: opacity 0.3s ease; /* Transição suave para a opacidade */
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Os botões devem estar dentro de .project-image */
+.project-image .project-buttons {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2; /* Garante que os botões fiquem acima da imagem e do overlay */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-image .project-buttons {
+    opacity: 1; /* Mostra os botões no hover da imagem */
 }
 
 .project-card:hover .project-image::after {
-    opacity: 1; /* Totalmente opaco no hover */
+    opacity: 1;
 }
 
 .project-card:hover .project-image img {
-    transform: scale(1.05); /* Efeito de zoom na imagem */
+    transform: scale(1.05);
 }
 
 .project-content {
@@ -376,7 +395,7 @@ section {
     font-weight: 500;
     transition: all 0.3s ease;
     text-align: center;
-    flex: 1; /* Faz com que os botões ocupem o mesmo espaço */
+    flex: 1;
 }
 
 .btn-primary {
@@ -398,6 +417,33 @@ section {
 .btn-secondary:hover {
     background: var(--primary-color);
     color: white;
+}
+
+.project-buttons a {
+    position: relative;
+}
+
+.project-buttons a::after {
+    content: attr(title);
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.project-buttons a:hover::after {
+    opacity: 1;
+    visibility: visible;
 }
 
 /* Skills Section */
