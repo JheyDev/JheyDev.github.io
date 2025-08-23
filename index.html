@@ -355,23 +355,91 @@
             <div class="container">
                 <h2 class="section-title">Entre em <span class="highlight">Contato</span></h2>
                 <div class="section-divider"></div>
-                <form action="#" method="POST" class="contact-form">
+                
+                <!-- Feedback de Clientes -->
+                <div class="testimonials">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">
+                            "Profissional dedicada, sempre entrega além do esperado. Recomendo muito!"
+                        </p>
+                        <div class="testimonial-author">
+                            <img src="img/client1.jpg" alt="Cliente 1">
+                            <span>Lucas Andrade</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">
+                            "Trabalho impecável, comunicação clara e muita criatividade nos projetos."
+                        </p>
+                        <div class="testimonial-author">
+                            <img src="img/client2.jpg" alt="Cliente 2">
+                            <span>Fernanda Souza</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">
+                            "A Jennyfer entende rápido o que o cliente precisa e entrega soluções modernas."
+                        </p>
+                        <div class="testimonial-author">
+                            <img src="img/client3.jpg" alt="Cliente 3">
+                            <span>Rafael Lima</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">
+                            "Ótima experiência! Sempre atenciosa e pronta para ajudar em cada etapa."
+                        </p>
+                        <div class="testimonial-author">
+                            <img src="img/client4.jpg" alt="Cliente 4">
+                            <span>Patrícia Melo</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">
+                            "Superou minhas expectativas em todos os sentidos. Voltarei a contratar!"
+                        </p>
+                        <div class="testimonial-author">
+                            <img src="img/client5.jpg" alt="Cliente 5">
+                            <span>Thiago Ramos</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align:center;">
+                    <button class="cta-button" id="openContactModal">Entre em contato</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal de Contato -->
+        <div id="contactModal" class="modal-overlay">
+            <div class="modal-content">
+                <button class="modal-close" id="closeContactModal" title="Fechar">&times;</button>
+                <h2 class="section-title" style="font-size:1.5rem;">Envie sua mensagem</h2>
+                <form class="contact-form" id="customContactForm" onsubmit="return false;">
                     <div class="form-group">
-                        <label for="name">Nome:</label>
-                        <input type="text" id="name" name="name" required>
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" name="nome" required>
                     </div>
                     <div class="form-group">
                         <label for="email">E-mail:</label>
-                        <input type="email" id="email" name="email" required>
+                        <input type="email" id="email" name="email" required placeholder="ex: email@dominio.com">
                     </div>
                     <div class="form-group">
-                        <label for="message">Mensagem:</label>
-                        <textarea id="message" name="message" rows="4" required></textarea>
+                        <label for="telefone">Telefone/WhatsApp:</label>
+                        <input type="tel" id="telefone" name="telefone" required placeholder="(41) 99999-9999">
                     </div>
-                    <button type="submit" class="cta-button">Enviar Mensagem</button>
+                    <div class="form-group">
+                        <label for="mensagem">Mensagem:</label>
+                        <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="cta-button" onclick="enviarEmail()">Enviar por E-mail</button>
+                        <button type="button" class="cta-button whatsapp" onclick="enviarWhatsApp()">Enviar por WhatsApp</button>
+                    </div>
                 </form>
             </div>
-        </section>
+        </div>
 
         <!-- Footer -->
         <footer class="footer">

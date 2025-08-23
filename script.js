@@ -222,3 +222,65 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
         document.querySelector('.design-projects').style.display = (tab === 'design') ? 'grid' : 'none';
     });
 });
+
+// Modal de contato
+document.addEventListener('DOMContentLoaded', function() {
+    const openModalBtn = document.getElementById('openContactModal');
+    const closeModalBtn = document.getElementById('closeContactModal');
+    const modal = document.getElementById('contactModal');
+
+    if (openModalBtn && closeModalBtn && modal) {
+        openModalBtn.addEventListener('click', function() {
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeModalBtn.addEventListener('click', function() {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        // Fecha modal ao clicar fora do conteúdo
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+    }
+
+    // Função para enviar por e-mail usando mailto
+    window.enviarEmail = function() {
+        const nome = modal.querySelector('#nome').value;
+        const emailCliente = modal.querySelector('#email').value;
+        const telefone = modal.querySelector('#telefone').value;
+        const mensagem = modal.querySelector('#mensagem').value;
+        const email = "jhey.artedesign@gmail.com"; // Seu e-mail real
+
+        // Assunto: (nome da pessoa) | Contato pelo portfolio
+        const assunto = encodeURIComponent(`${nome} | Contato pelo portfolio`);
+
+        // Corpo: mensagem + contato formatado
+        const corpo = encodeURIComponent(
+            `${mensagem}\n\nContato:\n✉️ ${emailCliente}\n📱 ${telefone}`
+        );
+
+        window.location.href = `mailto:${email}?subject=${assunto}&body=${corpo}`;
+    };
+
+    // Função para enviar mensagem para WhatsApp
+    window.enviarWhatsApp = function() {
+        const nome = modal.querySelector('#nome').value;
+        const emailCliente = modal.querySelector('#email').value;
+        const telefone = modal.querySelector('#telefone').value;
+        const mensagem = modal.querySelector('#mensagem').value;
+        const numero = "5541996808150"; // Seu número real
+
+        // Assunto: (nome da pessoa) | Contato pelo portfolio
+        const texto = encodeURIComponent(
+            `Assunto: ${nome} | Contato pelo portfolio\n\n${mensagem}\n\nContato:\n✉️ ${emailCliente}\n📱 ${telefone}`
+        );
+
+        window.open(`https://api.whatsapp.com/send?phone=${numero}&text=${texto}`, '_blank');
+    };
+});
