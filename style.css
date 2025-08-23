@@ -400,8 +400,9 @@ section {
 .image-actions a {
   background: var(--gradient);
   color: #fff;
-  padding: 0.8rem;
-  border-radius: 50%;
+  width: 48px;           /* Tamanho fixo para largura */
+  height: 48px;          /* Tamanho fixo para altura */
+  border-radius: 12px;   /* Bordas arredondadas, mas ainda quadrado */
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -409,6 +410,8 @@ section {
   box-shadow: 0 2px 12px rgba(139, 92, 246, 0.18);
   transition: transform 0.2s, box-shadow 0.3s, background 0.3s;
   border: none;
+  padding: 0;            /* Remove padding extra */
+  aspect-ratio: 1 / 1;   /* Garante proporção quadrada mesmo se o conteúdo mudar */
 }
 
 .image-actions a:hover {
