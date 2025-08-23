@@ -49,7 +49,7 @@
                         Desenvolvedora Web Front-end & UI/UX Designer Freelancer
                     </h2>
                     <p class="hero-description">
-                        Suas ideias transformadas em experiências digitais elegantes e funcionais.
+                        Para cada problema, existem múltiplas soluções. Eu crio experiências digitais intuitivas e visualmente atraentes que conectam pessoas e ideias.
                     </p>
                     <a href="#projects" class="cta-button">Ver Projetos</a>
                 </div>
@@ -110,80 +110,176 @@
             <div class="container">
                 <h2 class="section-title">Meus <span class="highlight">Projetos</span></h2>
                 <div class="section-divider"></div>
-                <div class="projects-grid">
-
-                    <!-- Card do Projeto 1 -->
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="img/layout.jpg" alt="Captura de tela de um e-commerce moderno" loading="lazy">
-                            <div class="project-buttons">
-                                <a href="https://jheydev.github.io/rocknbluesrock/" class="btn-primary" target="_blank" title="Ver Projeto">
+                
+                <!-- Abas de navegação -->
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="frontend">Desenvolvimento Frontend</button>
+                    <button class="tab-btn" data-tab="design">Design Digital</button>
+                </div>
+                
+                <!-- Grid de projetos Frontend -->
+                <div class="projects-grid frontend-projects">
+                    <!-- Projeto real 1 -->
+                    <div class="card">
+                        <div class="image_container">
+                            <img src="img/layout.jpg" alt="Rock'n Blues Coffee" class="image" />
+                            <div class="image-actions">
+                                <a href="https://jheydev.github.io/rocknbluesrock/" class="btn-icon" target="_blank" title="Ver Projeto">
                                     <i class="fas fa-eye"></i>
                                 </a>
-                                <a href="https://github.com/JheyDev/rocknbluesrock" class="btn-secondary" target="_blank" title="Ver Repositório">
-                                    <i class="fas fa-code"></i>
+                                <a href="https://github.com/JheyDev/rocknbluesrock" class="btn-icon-outline" target="_blank" title="Ver Repositório">
+                                    <i class="fas fa-file-code"></i>
                                 </a>
                             </div>
                         </div>
-                        <div class="project-content">
-                            <h3>Rock'n Blues Coffee</h3>
-                            <p>Cafeteria online com a alma musical do Rock'n Roll e a suavidade do Blues. O site oferece catálogo de produtos, carrinho de compras dinâmico e um design responsivo.</p>
-                            <div class="project-tech">
-                                <span>HTML5</span>
-                                <span>CSS3</span>
-                                <span>JavaScript</span>
-                            </div>
+                        <div class="title"><span>Rock'n Blues Coffee</span></div>
+                        <div class="description">
+                            <p>Cafeteria online com catálogo de produtos e carrinho dinâmico.</p>
+                        </div>
+                        <div class="tech-stack">
+                            <span>HTML</span><span>CSS</span><span>JavaScript</span>
                         </div>
                     </div>
-
-                    <!-- Card do Projeto 2 -->
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="img/kanban.jpg" alt="Captura de tela do Projeto 1" loading="lazy" width="800" height="450">
-                            <div class="project-buttons">
-                                <a href="https://jheydev.github.io/Kanban/" class="btn-primary" target="_blank" title="Ver Projeto">
+                    <!-- Projeto real 2 -->
+                    <div class="card">
+                        <div class="image_container">
+                            <img src="img/kanban.jpg" alt="Kanban Pessoal" class="image" />
+                            <div class="image-actions">
+                                <a href="https://jheydev.github.io/Kanban/" class="btn-icon" target="_blank" title="Ver Projeto">
                                     <i class="fas fa-eye"></i>
                                 </a>
-                                <a href="https://github.com/JheyDev/Kanban.git" class="btn-secondary" target="_blank" title="Ver Repositório">
-                                    <i class="fas fa-code"></i>
+                                <a href="https://github.com/JheyDev/Kanban.git" class="btn-icon-outline" target="_blank" title="Ver Repositório">
+                                    <i class="fas fa-file-code"></i>
                                 </a>
                             </div>
                         </div>
-                        <div class="project-content">
-                            <h3>Kanban Pessoal</h3>
-                            <p>Meu Kanban Pessoal Solução web para otimização do fluxo de trabalho pessoal, implementando um sistema Kanban completo. Oferece uma interface intuitiva para gerenciar o ciclo de vida das tarefas, desde o backlog até a conclusão, com recursos de arrastar e soltar e persistência local</p>
-                            <div class="project-tech">
-                                <span>HTML5</span>
-                                <span>CSS3</span>
-                                <span>JavaScript</span>
-                            </div>
+                        <div class="title"><span>Kanban Pessoal</span></div>
+                        <div class="description">
+                            <p>Gerenciador de tarefas com drag & drop e persistência local.</p>
+                        </div>
+                        <div class="tech-stack">
+                            <span>HTML</span><span>CSS</span><span>JavaScript</span>
                         </div>
                     </div>
-
-                    <!-- Card do Projeto 3 -->
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="img/marinani.png" alt="Captura de tela de um aplicativo de tarefas" loading="lazy">
-                            <div class="project-buttons">
-                                <a href="https://marinani.github.io/" class="btn-primary" target="_blank" title="Ver Projeto">
+                    <!-- Projeto fictício 1 -->
+                    <div class="card">
+                        <div class="image_container">
+                            <img src="img/ficticio1.jpg" alt="Dashboard Financeiro" class="image" />
+                            <div class="image-actions">
+                                <a href="#" class="btn-icon" target="_blank" title="Ver Projeto">
                                     <i class="fas fa-eye"></i>
                                 </a>
-                                <a href="https://github.com/marinani/marinani.github.io" class="btn-secondary" target="_blank" title="Ver Repositório">
-                                    <i class="fas fa-code"></i>
+                                <a href="#" class="btn-icon-outline" target="_blank" title="Ver Repositório">
+                                    <i class="fas fa-file-code"></i>
                                 </a>
                             </div>
                         </div>
-                        <div class="project-content">
-                            <h3>Portfolio Marinani Developer</h3>
-                            <p>Solução web focada em destacar a carreira de uma especialista em back-end, na qual fui colaboradora do repositório. O projeto apresenta uma arquitetura responsiva e intuitiva para exibir projetos, habilidades e informações de contato de forma clara e profissional. Oferece uma experiência de usuário otimizada para navegadores e dispositivos móveis, reforçando a identidade digital da profissional.</p>
-                            <div class="project-tech">
-                                <span>HTML5</span>
-                                <span>CSS3</span>
-                                <span>JavaScript</span>
-                            </div>
+                        <div class="title"><span>Dashboard Financeiro</span></div>
+                        <div class="description">
+                            <p>Interface para controle de gastos com gráficos dinâmicos e filtros mensais.</p>
+                        </div>
+                        <div class="tech-stack">
+                            <span>HTML</span><span>CSS</span><span>Chart.js</span>
                         </div>
                     </div>
-
+                    <!-- Projeto fictício 2 -->
+                    <div class="card">
+                        <div class="image_container">
+                            <img src="img/ficticio2.jpg" alt="Landing Page Yoga" class="image" />
+                            <div class="image-actions">
+                                <a href="#" class="btn-icon" target="_blank" title="Ver Projeto">
+                                    <i class="fas fa-eye"></i>
+                                </a>
+                                <a href="#" class="btn-icon-outline" target="_blank" title="Ver Repositório">
+                                    <i class="fas fa-file-code"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="title"><span>Landing Page Yoga</span></div>
+                        <div class="description">
+                            <p>Página de apresentação para estúdio de yoga com foco em minimalismo e UX.</p>
+                        </div>
+                        <div class="tech-stack">
+                            <span>HTML</span><span>CSS</span><span>GSAP</span>
+                        </div>
+                    </div>
+                    <!-- Projeto fictício 3 -->
+                    <div class="card">
+                        <div class="image_container">
+                            <img src="img/ficticio3.jpg" alt="App de Clima" class="image" />
+                            <div class="image-actions">
+                                <a href="#" class="btn-icon" target="_blank" title="Ver Projeto">
+                                    <i class="fas fa-eye"></i>
+                                </a>
+                                <a href="#" class="btn-icon-outline" target="_blank" title="Ver Repositório">
+                                    <i class="fas fa-file-code"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="title"><span>App de Clima</span></div>
+                        <div class="description">
+                            <p>Aplicativo web que exibe previsão do tempo com integração à API OpenWeather.</p>
+                        </div>
+                        <div class="tech-stack">
+                            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Grid de projetos Design -->
+                <div class="projects-grid design-projects" style="display: none;">
+                    <!-- Projeto fictício 1 -->
+                    <div class="card">
+                        <div class="image_container">
+                            <img src="img/card-visit.jpg" alt="Cartão de Visita Studio X" class="image" />
+                        </div>
+                        <div class="title"><span>Cartão de Visita - Studio X</span></div>
+                        <div class="description">
+                            <p>Design de cartão de visita moderno para Studio X, focando em identidade visual minimalista e elegante.</p>
+                        </div>
+                        <div class="tech-stack">
+                            <span>Photoshop</span><span>Canva</span>
+                        </div>
+                    </div>
+                    <!-- Projeto fictício 2 -->
+                    <div class="card">
+                        <div class="image_container">
+                            <img src="img/identidade-visual.jpg" alt="Identidade Visual Loja Bella" class="image" />
+                        </div>
+                        <div class="title"><span>Identidade Visual - Loja Bella</span></div>
+                        <div class="description">
+                            <p>Criação de logotipo, paleta de cores e manual de marca para loja de roupas femininas.</p>
+                        </div>
+                        <div class="tech-stack">
+                            <span>Illustrator</span><span>Photoshop</span>
+                        </div>
+                    </div>
+                    <!-- Projeto fictício 3 -->
+                    <div class="card">
+                        <div class="image_container">
+                            <img src="img/social-media.jpg" alt="Social Media PetShop" class="image" />
+                        </div>
+                        <div class="title"><span>Social Media - PetShop</span></div>
+                        <div class="description">
+                            <p>Posts e banners para Instagram e Facebook, com foco em engajamento e branding.</p>
+                        </div>
+                        <div class="tech-stack">
+                            <span>Canva</span>
+                        </div>
+                    </div>
+                    <!-- Projeto fictício 4 -->
+                    <div class="card">
+                        <div class="image_container">
+                            <img src="img/produto-design.jpg" alt="Embalagem Café Premium" class="image" />
+                        </div>
+                        <div class="title"><span>Embalagem Café Premium</span></div>
+                        <div class="description">
+                            <p>Design de embalagem para linha de cafés especiais, explorando minimalismo e sofisticação.</p>
+                        </div>
+                        <div class="tech-stack">
+                            <span>Photoshop</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -193,145 +289,113 @@
             <div class="container">
                 <h2 class="section-title">Minhas <span class="highlight">Habilidades</span></h2>
                 <div class="section-divider"></div>
-                <div class="skills-grid">
-                    <div class="skill-item">
+                <div class="skills-content">
+                    <div class="skill-card">
                         <div class="skill-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polygon points="13,2 3,14 12,14 11,22 21,10 12,10 13,2"></polygon>
-                            </svg>
+                            <i class="fas fa-code"></i>
                         </div>
-                        <h3>HTML5</h3>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-progress="95"></div>
+                        <div class="skill-info">
+                            <h3>Desenvolvimento Front-end</h3>
+                            <p>HTML, CSS, JavaScript</p>
                         </div>
-                        <span class="skill-percentage">95%</span>
                     </div>
-                    
-                    <div class="skill-item">
+                    <div class="skill-card">
                         <div class="skill-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M12 2L2 7L12 12L22 7L12 2Z"></path>
-                                <path d="M2 17L12 22L22 17"></path>
-                                <path d="M2 12L12 17L22 12"></path>
-                            </svg>
+                            <i class="fas fa-paint-brush"></i>
                         </div>
-                        <h3>CSS3</h3>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-progress="90"></div>
+                        <div class="skill-info">
+                            <h3>UI/UX Design</h3>
+                            <p>Prototipagem, testes de usabilidade</p>
                         </div>
-                        <span class="skill-percentage">90%</span>
                     </div>
-                    
-                    <div class="skill-item">
+                    <div class="skill-card">
                         <div class="skill-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="16,18 22,12 16,6"></polyline>
-                                <polyline points="8,6 2,12 8,18"></polyline>
-                            </svg>
+                            <i class="fas fa-tools"></i>
                         </div>
-                        <h3>JavaScript</h3>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-progress="85"></div>
+                        <div class="skill-info">
+                            <h3>Metodologias Ágeis</h3>
+                            <p>Scrum, Kanban, gestão de projetos</p>
                         </div>
-                        <span class="skill-percentage">85%</span>
                     </div>
-                    
-                    <div class="skill-item">
+                    <div class="skill-card">
                         <div class="skill-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M12 2A10 10 0 1 0 22 12A10 10 0 0 0 12 2Z"></path>
-                                <path d="M8 12L11 15L16 9"></path>
-                            </svg>
+                            <i class="fas fa-robot"></i>
                         </div>
-                        <h3>IA (Design & Produtividade)</h3>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-progress="80"></div>
+                        <div class="skill-info">
+                            <h3>Inteligência Artificial</h3>
+                            <p>Prompts assertivos, criação de imagens com IA, automação de tarefas e pesquisa criativa</p>
                         </div>
-                        <span class="skill-percentage">80%</span>
                     </div>
-                    
-                    <div class="skill-item">
+                    <div class="skill-card">
                         <div class="skill-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                                <circle cx="9" cy="9" r="2"></circle>
-                                <path d="M21 15L16 10L5 21"></path>
-                            </svg>
+                            <i class="fas fa-language"></i>
                         </div>
-                        <h3>Canva</h3>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-progress="88"></div>
+                        <div class="skill-info">
+                            <h3>Inglês Técnico</h3>
+                            <p>Básico: leitura e compreensão de documentação técnica</p>
                         </div>
-                        <span class="skill-percentage">88%</span>
                     </div>
-                    
-                    <div class="skill-item">
+                    <div class="skill-card">
                         <div class="skill-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M14.7 6.3A1 1 0 0 0 13 5H5A2 2 0 0 0 3 7V19A2 2 0 0 0 5 21H19A2 2 0 0 0 21 19V11A1 1 0 0 0 19.3 9.3L14.7 6.3Z"></path>
-                                <polyline points="3 7 9 13 21 1"></polyline>
-                            </svg>
+                            <i class="fas fa-user-friends"></i>
                         </div>
-                        <h3>Adobe Photoshop</h3>
-                        <div class="skill-bar">
-                            <div class="skill-progress" data-progress="75"></div>
+                        <div class="skill-info">
+                            <h3>Soft Skills</h3>
+                            <p>
+                                Proatividade, criatividade, dedicação aos estudos, simpatia, comunicação eficaz e persistência para superar desafios.
+                            </p>
                         </div>
-                        <span class="skill-percentage">75%</span>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- Contact Section -->
         <section id="contact" class="contact">
-    <div class="container">
-        <h2 class="section-title">Vamos <span class="highlight">Conversar!</span></h2>
-        <div class="section-divider"></div>
-        <div class="contact-content-social">
-            <div class="contact-info">
-                <h3>Entre em Contato</h3>
-                <p>Estou sempre interessada em novos projetos e oportunidades de colaboração. Vamos criar algo incrível juntas!</p>
-                <div class="social-links">
-                    
-                    <a href="https://www.linkedin.com/in/jennyferribeiro/" target="_blank" class="social-link linkedin-link">
-                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M19,3H5C3.895,3,3,3.895,3,5v14c0,1.105,0.895,2,2,2h14c1.105,0,2-0.895,2-2V5C21,3.895,20.105,3,19,3z M9,17H6.477v-7H9 V17z M7.694,8.717c-0.771,0-1.286-0.514-1.286-1.2s0.514-1.2,1.371-1.2c0.771,0,1.286,0.514,1.286,1.2S8.551,8.717,7.694,8.717z M18,17h-2.442v-3.826c0-1.058-0.651-1.302-0.895-1.302s-1.058,0.163-1.058,1.302c0,0.163,0,3.826,0,3.826h-2.523v-7h2.523v0.977 C13.93,10.407,14.581,10,15.802,10C17.023,10,18,10.977,18,13.174V17z"></path>
-                        </svg>
-                        <span>LinkedIn</span>
-                    </a>
+            <div class="container">
+                <h2 class="section-title">Entre em <span class="highlight">Contato</span></h2>
+                <div class="section-divider"></div>
+                <form action="#" method="POST" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Nome:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensagem:</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="cta-button">Enviar Mensagem</button>
+                </form>
+            </div>
+        </section>
 
-                    <a href="https://github.com/JheyDev" target="_blank" class="social-link github-link">
-                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 30 30" fill="currentColor">
-                            <path d="M15,3C8.373,3,3,8.373,3,15c0,5.623,3.872,10.328,9.092,11.63C12.036,26.468,12,26.28,12,26.047v-2.051 c-0.487,0-1.303,0-1.508,0c-0.821,0-1.551-0.353-1.905-1.009c-0.393-0.729-0.461-1.844-1.435-2.526 c-0.289-0.227-0.069-0.486,0.264-0.451c0.615,0.174,1.125,0.596,1.605,1.222c0.478,0.627,0.703,0.769,1.596,0.769 c0.433,0,1.081-0.025,1.691-0.121c0.328-0.833,0.895-1.6,1.588-1.962c-3.996-0.411-5.903-2.399-5.903-5.098 c0-1.162,0.495-2.286,1.336-3.233C9.053,10.647,8.706,8.73,9.435,8c1.798,0,2.885,1.166,3.146,1.481C13.477,9.174,14.461,9,15.495,9 c1.036,0,2.024,0.174,2.922,0.483C18.675,9.17,19.763,8,21.565,8c0.732,0.731,0.381,2.656,0.102,3.594 c0.836,0.945,1.328,2.066,1.328,3.226c0,2.697-1.904,4.684-5.894,5.097C18.199,20.49,19,22.1,19,23.313v2.734 c0,0.104-0.023,0.179-0.035,0.268C23.641,24.676,27,20.236,27,15C27,8.373,21.627,3,15,3z"></path>
-                        </svg>
-                        <span>GitHub</span>
-                    </a>
-                    
-                    <a href="mailto:jennyfer.souzar@gmail.com" target="_blank" class="social-link gmail-link">
-                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 32 32" fill="currentColor">
-                            <path d="M 6 7.03125 C 5.691406 7.03125 5.402344 7.089844 5.125 7.175781 L 8.039063 9.03125 L 23.960938 9.03125 L 26.875 7.175781 C 26.597656 7.089844 26.308594 7.03125 26 7.03125 Z M 4.113281 7.71875 C 3.4375 8.269531 3 9.097656 3 10.03125 L 3 23.03125 C 3 24.683594 4.347656 26.03125 6 26.03125 L 26 26.03125 C 27.652344 26.03125 29 24.683594 29 23.03125 L 29 10.03125 C 29 9.097656 28.5625 8.269531 27.886719 7.71875 L 16 15.28125 Z M 6 12.445313 L 16 18.8125 L 26 12.445313 L 26 24.03125 L 6 24.03125 Z"></path>
-                        </svg>
-                        <span>Gmail</span>
-                    </a>
-
-                    <a href="https://wa.me/41996808150" target="_blank" class="social-link whatsapp-link">
-                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M19.077,4.928C17.191,3.041,14.683,2.001,12.011,2c-5.506,0-9.987,4.479-9.989,9.985 c-0.001,1.76,0.459,3.478,1.333,4.992L2,22l5.233-1.237c1.459,0.796,3.101,1.215,4.773,1.216h0.004 c5.505,0,9.986-4.48,9.989-9.985C22.001,9.325,20.963,6.816,19.077,4.928z M16.898,15.554c-0.208,0.583-1.227,1.145-1.685,1.186 c-0.458,0.042-0.887,0.207-2.995-0.624c-2.537-1-4.139-3.601-4.263-3.767c-0.125-0.167-1.019-1.353-1.019-2.581 S7.581,7.936,7.81,7.687c0.229-0.25,0.499-0.312,0.666-0.312c0.166,0,0.333,0,0.478,0.006c0.178,0.007,0.375,0.016,0.562,0.431 c0.222,0.494,0.707,1.728,0.769,1.853s0.104,0.271,0.021,0.437s-0.125,0.27-0.249,0.416c-0.125,0.146-0.262,0.325-0.374,0.437 c-0.125,0.124-0.255,0.26-0.11,0.509c0.146,0.25,0.646,1.067,1.388,1.728c0.954,0.85,1.757,1.113,2.007,1.239 c0.25,0.125,0.395,0.104,0.541-0.063c0.146-0.166,0.624-0.728,0.79-0.978s0.333-0.208,0.562-0.125s1.456,0.687,1.705,0.812 c0.25,0.125,0.416,0.187,0.478,0.291C17.106,14.471,17.106,14.971,16.898,15.554z"></path>
-                        </svg>
-                        <span>WhatsApp</span>
-                    </a>
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="social-links">
+                        <a href="https://github.com/JheyDev" target="_blank" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/jennyfer-ribeiro-dev/" target="_blank" title="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://api.whatsapp.com/send?phone=5541999999999" target="_blank" title="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                    <p>&copy; 2023 Jennyfer Ribeiro. Todos os direitos reservados.</p>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
+        </footer>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 Jennyfer Ribeiro. Todos os direitos reservados.</p>
-        </div>
-    </footer>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="script.js"></script>
+    </body>
+    </html>
 
-    <script src="script.js"></script>
-</body>
-</html>
+

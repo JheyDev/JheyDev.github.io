@@ -208,3 +208,17 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style); // Adiciona a tag <style> ao <head> do documento
+
+// Tabs de projetos
+document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        // Remove 'active' de todas as abas
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        
+        // Alterna grids de projetos
+        const tab = this.getAttribute('data-tab');
+        document.querySelector('.frontend-projects').style.display = (tab === 'frontend') ? 'grid' : 'none';
+        document.querySelector('.design-projects').style.display = (tab === 'design') ? 'grid' : 'none';
+    });
+});
