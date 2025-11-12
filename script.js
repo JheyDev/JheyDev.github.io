@@ -1,286 +1,314 @@
-// DOM Elements: Seleciona os elementos do DOM que serão manipulados
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
-const navLinks = document.querySelectorAll('.nav-menu a');
-const skillProgress = document.querySelectorAll('.skill-progress');
-const ctaButton = document.querySelector('.cta-button');
+// Navegação responsiva
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('nav-menu');
+const navbar = document.getElementById('navbar');
 
-// Mobile Navigation Toggle: Adiciona um evento de clique ao ícone de hambúrguer para alternar o menu mobile
 hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active'); // Adiciona/remove a classe 'active' para animar o ícone
-    navMenu.classList.toggle('active');   // Adiciona/remove a classe 'active' para mostrar/esconder o menu
+    navMenu.classList.toggle('active');
 });
 
-// Close mobile menu when clicking on a link: Fecha o menu mobile ao clicar em um link de navegação
-navLinks.forEach(link => {
+// Fechar menu ao clicar em um link
+document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
-        hamburger.classList.remove('active'); // Remove a classe 'active' do ícone de hambúrguer
-        navMenu.classList.remove('active');   // Esconde o menu mobile
+        navMenu.classList.remove('active');
     });
 });
 
-// Smooth scrolling for navigation links: Adiciona rolagem suave para links de navegação
-navLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-        e.preventDefault(); // Previne o comportamento padrão do link (salto instantâneo)
-        const targetId = link.getAttribute('href'); // Obtém o ID da seção de destino (ex: #about)
-        const targetElement = document.querySelector(targetId); // Seleciona o elemento de destino
+// Navbar scroll effect
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 100) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
+
+// Navegação ativa baseada na seção atual
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('.nav-link');
+
+function updateActiveNav() {
+    let current = '';
+    
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
         
-        if (targetElement) {
-            // Calcula a posição de rolagem, ajustando para o cabeçalho fixo
-            const offsetTop = targetElement.offsetTop - 70; 
-            window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth' // Ativa a rolagem suave
+        if (window.scrollY >= sectionTop - 200) {
+            current = section.getAttribute('id');
+        }
+    });
+    
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('active');
+        }
+    });
+}
+
+window.addEventListener('scroll', updateActiveNav);
+
+// Animação de entrada dos elementos
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, observerOptions);
+
+// Observar elementos para animação
+document.querySelectorAll('.testimonial-card, .skill-item').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'all 0.6s ease';
+    observer.observe(el);
+});
+
+// Smooth scroll para links internos
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href === '#') return; // Ignora links vazios
+
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
             });
         }
     });
 });
 
-// CTA Button smooth scroll: Rolagem suave para o botão "Ver Projetos"
-ctaButton.addEventListener('click', (e) => {
-    e.preventDefault(); // Previne o comportamento padrão do link
-    const targetElement = document.querySelector('#projects'); // Define a seção de projetos como destino
-    const offsetTop = targetElement.offsetTop - 70; // Ajusta para o cabeçalho fixo
-    window.scrollTo({
-        top: offsetTop,
-        behavior: 'smooth'
-    });
-});
+// Animação dos ícones de habilidades
+const skillIcons = document.querySelectorAll('.skill-icon');
 
-// Intersection Observer for fade-in animations: Configura o observador para animações de entrada
-const observerOptions = {
-    threshold: 0.1, // O elemento é considerado visível quando 10% dele está na viewport
-    rootMargin: '0px 0px -50px 0px' // Margem para acionar o observador antes do elemento entrar completamente
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) { // Se o elemento está na viewport
-            entry.target.classList.add('visible'); // Adiciona a classe 'visible' para acionar a animação
-            
-            // Anima as barras de habilidade quando a seção de habilidades é visível
-            if (entry.target.id === 'skills') {
-                animateSkillBars();
-            }
+const skillObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+            setTimeout(() => {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0) scale(1)';
+            }, index * 100);
         }
     });
-}, observerOptions);
+}, { threshold: 0.5 });
 
-// Add fade-in class to elements and observe them: Adiciona a classe 'fade-in' e observa elementos para animação
-const fadeElements = document.querySelectorAll('.project-card, .skill-item, .highlight-card, .about-text, .contact-info, .contact-content-social'); // Atualizado para nova classe de contato
-fadeElements.forEach(el => {
-    el.classList.add('fade-in'); // Adiciona a classe inicial para a animação
-    observer.observe(el); // Começa a observar o elemento
+skillIcons.forEach(icon => {
+    icon.style.opacity = '0';
+    icon.style.transform = 'translateY(20px) scale(0.8)';
+    icon.style.transition = 'all 0.4s ease';
+    skillObserver.observe(icon);
 });
 
-// Observe sections for animations: Observa as seções para a animação de "fade-in"
-const sections = document.querySelectorAll('section');
-sections.forEach(section => {
-    observer.observe(section);
+// Animação dos cards de feedback
+const testimonialCards = document.querySelectorAll('.testimonial-card');
+
+testimonialCards.forEach((card, index) => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateX(-50px)';
+    card.style.transition = `all 0.6s ease ${index * 0.2}s`;
 });
 
-// Animate skill bars: Função para animar as barras de progresso das habilidades
-function animateSkillBars() {
-    skillProgress.forEach(bar => {
-        const progress = bar.getAttribute('data-progress'); // Obtém o valor de progresso do atributo data-progress
-        setTimeout(() => {
-            bar.style.width = progress + '%'; // Define a largura da barra para animar
-        }, 200); // Pequeno atraso para a animação
+const testimonialObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateX(0)';
+        }
     });
-}
+}, { threshold: 0.3 });
 
-// Header background change on scroll: Altera o fundo do cabeçalho ao rolar a página
+testimonialCards.forEach(card => {
+    testimonialObserver.observe(card);
+});
+
+// Animação dos ícones sociais
+const socialIcons = document.querySelectorAll('.social-icon');
+
+socialIcons.forEach((icon, index) => {
+    icon.style.opacity = '0';
+    icon.style.transform = 'translateY(30px) rotate(180deg)';
+    icon.style.transition = `all 0.5s ease ${index * 0.1}s`;
+});
+
+const socialObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0) rotate(0deg)';
+        }
+    });
+}, { threshold: 0.5 });
+
+socialIcons.forEach(icon => {
+    socialObserver.observe(icon);
+});
+
+// Efeito parallax sutil no hero
 window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 100) { // Se a rolagem for maior que 100px
-        navbar.style.background = 'rgba(10, 10, 10, 0.95)'; // Fundo mais opaco
-    } else {
-        navbar.style.background = 'rgba(10, 10, 10, 0.9)'; // Fundo original
+    const scrolled = window.pageYOffset;
+    const parallax = document.querySelector('.cyber-grid');
+    const speed = scrolled * 0.5;
+    
+    if (parallax) {
+        parallax.style.transform = `translateY(${speed}px)`;
     }
 });
 
-// REMOVIDO: Parallax effect for hero section (Removido para resolver a sobreposição)
-// window.addEventListener('scroll', () => {
-//     const scrolled = window.pageYOffset;
-//     const hero = document.querySelector('.hero');
-//     const heroContent = document.querySelector('.hero-content');
-    
-//     if (hero && heroContent) {
-//         heroContent.style.transform = `translateY(${scrolled * 0.5}px)`;
-//     }
-// });
-
-// Add loading animation to project images: Adiciona um efeito de fade-in para as imagens dos projetos
+// Inicialização
 document.addEventListener('DOMContentLoaded', () => {
-    const projectImages = document.querySelectorAll('.project-image img');
-    
-    projectImages.forEach(img => {
-        img.addEventListener('load', () => {
-            img.style.opacity = '1'; // Torna a imagem visível quando carregada
-        });
-        
-        // Define o estado inicial de carregamento (invisível)
-        img.style.opacity = '0';
-        img.style.transition = 'opacity 0.3s ease';
-    });
+    // Adicionar classe de carregamento
+    document.body.classList.add('loaded');
 });
 
-
-// Typing animation for hero title (optional enhancement): Animação de digitação para o título do Hero (opcional)
+// Efeito de digitação no hero (opcional)
 function typeWriter(element, text, speed = 100) {
     let i = 0;
-    element.innerHTML = ''; // Limpa o conteúdo inicial
+    element.innerHTML = '';
     
     function type() {
         if (i < text.length) {
-            element.innerHTML += text.charAt(i); // Adiciona um caractere por vez
+            element.innerHTML += text.charAt(i);
             i++;
-            setTimeout(type, speed); // Chama a função novamente após um atraso
+            setTimeout(type, speed);
         }
     }
     
     type();
 }
 
-// Initialize typing animation on page load (optional): Inicializa a animação de digitação ao carregar a página
+// Aplicar efeito de digitação ao carregar a página (opcional)
 window.addEventListener('load', () => {
-    const heroTitle = document.querySelector('.hero-title');
-    if (heroTitle) {
-        const originalText = heroTitle.textContent;
-        // Descomente a linha abaixo para ativar a animação de digitação
-        // typeWriter(heroTitle, originalText, 50);
+    const heroDescription = document.querySelector('.hero-description');
+    if (heroDescription) {
+        const originalText = heroDescription.textContent;
+        setTimeout(() => {
+            typeWriter(heroDescription, originalText, 50);
+        }, 1000);
     }
 });
 
-// Add hover effect to social links: Adiciona efeito de hover aos links sociais
-document.querySelectorAll('.social-link').forEach(link => {
-    link.addEventListener('mouseenter', (e) => {
-        e.target.style.transform = 'translateX(10px)'; // Move o link para a direita
-    });
-    
-    link.addEventListener('mouseleave', (e) => {
-        e.target.style.transform = 'translateX(0)'; // Retorna o link à posição original
-    });
+/**
+ * Controla o fluxo de animação do banner: Glitch Inicial -> Flicker Suave.
+ */
+function startAnimationFlow() {
+    const titleElement = document.getElementById('main-title');
+    if (!titleElement) return;
+
+    // 1. Ativa o Glitch de Inicialização (1.2s)
+    titleElement.classList.add('initial-glitch-active');
+
+    // 2. Após o Glitch Inicial, inicia o Flicker Suave e Intermitente
+    setTimeout(() => {
+        titleElement.classList.remove('initial-glitch-active');
+        titleElement.classList.add('flicker-active');
+    }, 1200); // 1.2 segundos para a animação inicial
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    startAnimationFlow();
 });
 
-// Smooth reveal animation for sections: Animação de revelação suave para títulos e divisores de seção
-const revealElements = document.querySelectorAll('.section-title, .section-divider');
-revealElements.forEach(el => {
-    el.classList.add('fade-in'); // Adiciona a classe inicial para a animação
-    observer.observe(el); // Observa o elemento
+// Lógica para o Toggle de Tema (Light/Dark Mode)
+const themeToggleBtn = document.getElementById('theme-toggle');
+const htmlEl = document.documentElement;
+
+// Função para aplicar o tema
+function applyTheme(theme) {
+    if (theme === 'dark') {
+        htmlEl.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+    } else {
+        htmlEl.removeAttribute('data-theme');
+        localStorage.setItem('theme', 'light');
+    }
+}
+
+// Verifica o tema salvo no localStorage ao carregar a página
+const savedTheme = localStorage.getItem('theme') || 'light'; // Padrão é 'light'
+applyTheme(savedTheme);
+
+// Adiciona o evento de clique ao botão
+themeToggleBtn.addEventListener('click', () => {
+    const currentTheme = htmlEl.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    applyTheme(newTheme);
 });
 
-// Add active state to navigation based on current section: Adiciona estado 'active' aos links de navegação com base na seção atual
-window.addEventListener('scroll', () => {
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.nav-menu a');
-    
-    let current = '';
-    sections.forEach(section => {
-        // Calcula a posição da seção na tela
-        const sectionTop = section.offsetTop - 100; // Ajuste para o cabeçalho
-        const sectionHeight = section.clientHeight;
-        // Verifica se a seção atual está visível na viewport
-        if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-            current = section.getAttribute('id'); // Obtém o ID da seção atual
+// Lógica da Seção de Projetos Interativa
+document.addEventListener('DOMContentLoaded', () => {
+    const carouselItems = document.querySelectorAll('.carousel-item');
+    const showcaseImage = document.getElementById('showcase-image');
+    const showcaseTitle = document.getElementById('showcase-title');
+    const showcaseDescription = document.getElementById('showcase-description');
+    const showcaseDemoBtn = document.getElementById('showcase-demo-btn');
+    const showcaseRepoBtn = document.getElementById('showcase-repo-btn');
+    const imageOverlayCategory = document.getElementById('image-overlay-category');
+    const imageOverlayTags = document.getElementById('image-overlay-tags');
+    const projectsCarousel = document.querySelector('.projects-carousel');
+    const carouselPrevBtn = document.getElementById('carousel-prev');
+    const carouselNextBtn = document.getElementById('carousel-next');
+
+
+    function updateShowcase(item) {
+        // Atualiza o conteúdo do showcase com os dados do item clicado
+        showcaseImage.style.backgroundImage = `url('${item.dataset.image}')`;
+        showcaseTitle.textContent = item.dataset.title;
+        showcaseDescription.textContent = item.dataset.description;
+        showcaseDemoBtn.href = item.dataset.demoLink;
+        showcaseRepoBtn.href = item.dataset.repoLink;
+
+        // Atualiza a sobreposição da imagem
+        imageOverlayCategory.textContent = item.dataset.category;
+        imageOverlayTags.innerHTML = ''; // Limpa as tags antigas
+        if (item.dataset.tags) {
+            const tags = item.dataset.tags.split(',');
+            tags.forEach(tagText => {
+                const tagElement = document.createElement('span');
+                tagElement.className = 'overlay-tag';
+                tagElement.textContent = tagText.trim();
+                imageOverlayTags.appendChild(tagElement);
+            });
         }
-    });
-    
-    navLinks.forEach(link => {
-        link.classList.remove('active'); // Remove a classe 'active' de todos os links
-        // Se o href do link corresponde ao ID da seção atual, adiciona a classe 'active'
-        if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
-        }
-    });
-});
 
-// Add CSS for active navigation state: Adiciona CSS dinamicamente para o estado ativo da navegação
-// Isso garante que o sublinhado e a cor do link ativo funcionem corretamente
-const style = document.createElement('style');
-style.textContent = `
-    .nav-menu a.active {
-        color: var(--primary-color); /* Cor do link ativo */
-    }
-    .nav-menu a.active::after {
-        width: 100%; /* Sublinhado completo para o link ativo */
-    }
-`;
-document.head.appendChild(style); // Adiciona a tag <style> ao <head> do documento
+        // Gerencia a visibilidade do botão de repositório
+        showcaseRepoBtn.style.display = 'inline-block'; // Garante que o botão sempre apareça
 
-// Tabs de projetos
-document.querySelectorAll('.tab-btn').forEach(btn => {
-    btn.addEventListener('click', function() {
-        // Remove 'active' de todas as abas
-        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-        this.classList.add('active');
-        
-        // Alterna grids de projetos
-        const tab = this.getAttribute('data-tab');
-        document.querySelector('.frontend-projects').style.display = (tab === 'frontend') ? 'grid' : 'none';
-        document.querySelector('.design-projects').style.display = (tab === 'design') ? 'grid' : 'none';
-    });
-});
-
-// Modal de contato
-document.addEventListener('DOMContentLoaded', function() {
-    const openModalBtn = document.getElementById('openContactModal');
-    const closeModalBtn = document.getElementById('closeContactModal');
-    const modal = document.getElementById('contactModal');
-
-    if (openModalBtn && closeModalBtn && modal) {
-        openModalBtn.addEventListener('click', function() {
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
-
-        closeModalBtn.addEventListener('click', function() {
-            modal.classList.remove('active');
-            document.body.style.overflow = '';
-        });
-
-        // Fecha modal ao clicar fora do conteúdo
-        modal.addEventListener('click', function(e) {
-            if (e.target === modal) {
-                modal.classList.remove('active');
-                document.body.style.overflow = '';
-            }
-        });
+        // Atualiza a classe 'active'
+        carouselItems.forEach(el => el.classList.remove('active'));
+        item.classList.add('active');
     }
 
-    // Função para enviar por e-mail usando mailto
-    window.enviarEmail = function() {
-        const nome = modal.querySelector('#nome').value;
-        const emailCliente = modal.querySelector('#email').value;
-        const telefone = modal.querySelector('#telefone').value;
-        const mensagem = modal.querySelector('#mensagem').value;
-        const email = "jhey.artedesign@gmail.com"; // Seu e-mail real
+    // Adiciona o evento de clique a cada item do carrossel
+    carouselItems.forEach(item => {
+        item.addEventListener('click', () => updateShowcase(item));
+    });
 
-        // Assunto: (nome da pessoa) | Contato pelo portfolio
-        const assunto = encodeURIComponent(`${nome} | Contato pelo portfolio`);
+    // Inicializa o showcase com o primeiro projeto
+    if (carouselItems.length > 0) {
+        updateShowcase(carouselItems[0]);
+    }
 
-        // Corpo: mensagem + contato formatado
-        const corpo = encodeURIComponent(
-            `${mensagem}\n\nContato:\n✉️ ${emailCliente}\n📱 ${telefone}`
-        );
+    // Lógica de navegação do carrossel
+    if (projectsCarousel && carouselPrevBtn && carouselNextBtn) {
+        const scrollAmount = 195; // Largura de um card + gap (180px + ~1rem)
 
-        window.location.href = `mailto:${email}?subject=${assunto}&body=${corpo}`;
-    };
+        carouselNextBtn.addEventListener('click', () => {
+            projectsCarousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        });
 
-    // Função para enviar mensagem para WhatsApp
-    window.enviarWhatsApp = function() {
-        const nome = modal.querySelector('#nome').value;
-        const emailCliente = modal.querySelector('#email').value;
-        const telefone = modal.querySelector('#telefone').value;
-        const mensagem = modal.querySelector('#mensagem').value;
-        const numero = "5541996808150"; // Seu número real
-
-        // Assunto: (nome da pessoa) | Contato pelo portfolio
-        const texto = encodeURIComponent(
-            `Assunto: ${nome} | Contato pelo portfolio\n\n${mensagem}\n\nContato:\n✉️ ${emailCliente}\n📱 ${telefone}`
-        );
-
-        window.open(`https://api.whatsapp.com/send?phone=${numero}&text=${texto}`, '_blank');
-    };
+        carouselPrevBtn.addEventListener('click', () => {
+            projectsCarousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        });
+    }
 });
