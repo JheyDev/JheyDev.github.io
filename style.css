@@ -1973,7 +1973,6 @@ text-shadow:
 ====================================================== */
 
 .project-grid {
-
   display: grid;
 
   grid-template-columns:
@@ -1988,12 +1987,14 @@ text-shadow:
   gap: 16px;
 
   margin-top: 65px;
-
 }
 
 
-.project-card {
+/* =====================================================
+   PROJECT CARD
+====================================================== */
 
+.project-card {
   min-width: 0;
 
   border:
@@ -2009,15 +2010,14 @@ text-shadow:
     border-color
     0.35s
     ease,
+
     transform
     0.35s
     ease;
-
 }
 
 
 .project-card:hover {
-
   border-color:
     rgba(
       139,
@@ -2028,29 +2028,29 @@ text-shadow:
 
   transform:
     translateY(-5px);
-
 }
 
 
-.project-image {
+/* =====================================================
+   PROJECT IMAGE
+====================================================== */
 
+.project-image {
   position: relative;
 
   aspect-ratio: 4 / 3;
 
   overflow: hidden;
 
-  background: #111;
-
+  background:
+    #111;
 }
 
 
 .project-image img {
-
   display: block;
 
   width: 100%;
-
   height: 100%;
 
   object-fit: cover;
@@ -2064,37 +2064,34 @@ text-shadow:
       0.36,
       1
     );
-
 }
 
 
 .project-card:hover
 .project-image img {
-
   transform:
     scale(1.06);
-
 }
 
 
-.project-index {
+/* =====================================================
+   PROJECT INDEX
+====================================================== */
 
+.project-index {
   position: absolute;
 
   top: 12px;
-
   left: 12px;
 
-  z-index: 3;
+  z-index: 11;
 
   display: inline-flex;
 
   align-items: center;
-
   justify-content: center;
 
   min-width: 32px;
-
   height: 24px;
 
   padding:
@@ -2109,30 +2106,37 @@ text-shadow:
       0.82
     );
 
-  color: var(--purple);
+  color:
+    var(--purple);
 
-  font-size: 0.62rem;
+  font-size:
+    0.62rem;
 
   font-weight: 800;
 
-  letter-spacing: 0.12em;
-
+  letter-spacing:
+    0.12em;
 }
 
 
-.project-overlay {
+/* =====================================================
+   PROJECT OVERLAY
+====================================================== */
 
+.project-overlay {
   position: absolute;
 
   inset: 0;
 
-  z-index: 2;
+  z-index: 10;
 
   display: flex;
 
   align-items: center;
-
   justify-content: center;
+
+  width: 100%;
+  height: 100%;
 
   background:
     rgba(
@@ -2144,16 +2148,39 @@ text-shadow:
 
   opacity: 0;
 
+  visibility: hidden;
+
+  color:
+    inherit;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
   transition:
     opacity
     0.35s
-    ease;
+    ease,
 
+    visibility
+    0.35s
+    ease;
 }
 
 
-.project-overlay span {
+.project-card:hover
+.project-overlay {
+  opacity: 1;
 
+  visibility: visible;
+}
+
+
+/* =====================================================
+   OVERLAY TEXT
+====================================================== */
+
+.project-overlay span {
   padding:
     10px
     14px;
@@ -2167,15 +2194,20 @@ text-shadow:
       0.55
     );
 
-  color: var(--text);
+  color:
+    var(--text);
 
-  font-size: 0.62rem;
+  font-size:
+    0.62rem;
 
-  font-weight: 700;
+  font-weight:
+    700;
 
-  letter-spacing: 0.1em;
+  letter-spacing:
+    0.1em;
 
-  text-transform: uppercase;
+  text-transform:
+    uppercase;
 
   transform:
     translateY(8px);
@@ -2185,35 +2217,29 @@ text-shadow:
     0.35s
     ease;
 
-}
-
-
-.project-card:hover
-.project-overlay {
-
-  opacity: 1;
-
+  pointer-events:
+    none;
 }
 
 
 .project-card:hover
 .project-overlay span {
-
   transform:
     translateY(0);
-
 }
 
 
+/* =====================================================
+   PROJECT CONTENT
+====================================================== */
+
 .project-content {
-
-  padding: 18px;
-
+  padding:
+    18px;
 }
 
 
 .project-content h2 {
-
   font-size:
     clamp(
       1.05rem,
@@ -2221,84 +2247,53 @@ text-shadow:
       1.45rem
     );
 
-  line-height: 1;
+  line-height:
+    1;
 
-  letter-spacing: -0.04em;
-
+  letter-spacing:
+    -0.04em;
 }
 
 
 .project-content p {
+  margin-top:
+    8px;
 
-  margin-top: 8px;
+  color:
+    var(--muted);
 
-  color: var(--muted);
+  font-size:
+    0.68rem;
 
-  font-size: 0.68rem;
-
-  line-height: 1.4;
-
+  line-height:
+    1.4;
 }
 
 
-.project-links {
-
-  display: flex;
-
-  flex-wrap: wrap;
-
-  gap: 14px;
-
-  margin-top: 18px;
-
-}
-
-
-.project-links a {
-
-  color: var(--text);
-
-  font-size: 0.65rem;
-
-  font-weight: 700;
-
-  letter-spacing: 0.08em;
-
-  text-transform: uppercase;
-
-  transition:
-    color
-    0.25s
-    ease;
-
-}
-
-
-.project-links a:hover {
-
-  color: var(--purple);
-
-}
-
+/* =====================================================
+   PROJETOS EXTRAS
+====================================================== */
 
 .project-extra {
-
-  display: none;
-
+  display:
+    none;
 }
 
 
 .project-grid.show-all
 .project-extra {
-
-  display: block;
-
+  display:
+    block;
 }
 
 
-.show-more {
+/* =====================================================
+   SHOW MORE
+====================================================== */
 
-  display: block;
+.show-more {
+  display:
+    block;
 
   margin:
     28px
@@ -2313,39 +2308,44 @@ text-shadow:
     1px solid
     var(--line);
 
-  background: transparent;
+  background:
+    transparent;
 
-  color: var(--text);
+  color:
+    var(--text);
 
-  cursor: pointer;
+  cursor:
+    pointer;
 
-  font-size: 0.65rem;
+  font-size:
+    0.65rem;
 
-  font-weight: 700;
+  font-weight:
+    700;
 
-  letter-spacing: 0.14em;
+  letter-spacing:
+    0.14em;
 
-  text-transform: uppercase;
+  text-transform:
+    uppercase;
 
   transition:
     border-color
     0.25s
     ease,
+
     color
     0.25s
     ease;
-
 }
 
 
 .show-more:hover {
-
   border-color:
     var(--purple);
 
   color:
     var(--purple);
-
 }
 
 
