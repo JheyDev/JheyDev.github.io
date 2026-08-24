@@ -14,9 +14,9 @@
 
   --muted: #a9a39d;
 
-  --purple: #8b5cf6;
+  --purple: #8a00c4;
 
-  --purple-light: #a78bfa;
+  --purple-light: #9d00ff;
 
   --line: rgba(
     245,
@@ -1249,83 +1249,79 @@ img {
    ASSINATURA PRINCIPAL
 ====================================================== */
 
-.signature {
-
-  position: absolute;
-
-  left: 50%;
-
-  top: 58%;
-
-  z-index: 3;
-
-  /*
-   * A assinatura possui sua própria largura.
-   * Isso evita que a caixa do elemento corte
-   * os traços da fonte cursiva.
-   */
-
-  width: max-content;
-
-  max-width: 95vw;
-
-  padding:
-    0.2em
-    0.35em
-    0.3em;
-
+.signature { 
+ 
+  position: absolute; 
+ 
+  left: 50%; 
+ 
+  top: 58%; 
+ 
+  z-index: 3; 
+ 
+  width: max-content; 
+ 
+  max-width: 95vw; 
+ 
+  padding: 
+    0.2em 
+    0.35em 
+    0.3em; 
+ 
   color: var(--purple);
 
-  font-family:
-    "Great Vibes",
-    cursive;
+  /* CONTORNO ESCURO DA ASSINATURA */
+  -webkit-text-stroke: 1px #050505;
 
-  font-size:
-    clamp(
-      5rem,
-      12vw,
-      9.5rem
-    );
-
-  font-weight: 400;
-
-  line-height: 1;
-
-  white-space: nowrap;
-
-  user-select: none;
-
-  /*
-   * ESSENCIAL:
-   * a assinatura não será cortada.
-   */
-
-  overflow: visible;
-
-  opacity: 0;
-
-  transform:
-    translate(
-      -47%,
-      -50%
-    )
-    rotate(-7deg)
-    scale(0.96);
-
-  animation:
-    heroSignature
-    1.2s
-    cubic-bezier(
-      0.65,
-      0,
-      0.35,
-      1
-    )
-    2.4s
-    forwards;
-
+text-shadow:
+  0 0 4px #050505,
+  0 0 10px rgba(5, 5, 5, 0.75),
+  0 4px 12px rgba(0, 0, 0, 0.45);
+ 
+  font-family: 
+    "Great Vibes", 
+    cursive; 
+ 
+  font-size: 
+    clamp( 
+      5rem, 
+      12vw, 
+      9.5rem 
+    ); 
+ 
+  font-weight: 400; 
+ 
+  line-height: 1; 
+ 
+  white-space: nowrap; 
+ 
+  user-select: none; 
+ 
+  overflow: visible; 
+ 
+  opacity: 0; 
+ 
+  transform: 
+    translate( 
+      -47%, 
+      -50% 
+    ) 
+    rotate(-7deg) 
+    scale(0.96); 
+ 
+  animation: 
+    heroSignature 
+    1.2s 
+    cubic-bezier( 
+      0.65, 
+      0, 
+      0.35, 
+      1 
+    ) 
+    2.4s 
+    forwards; 
+ 
 }
-
 
 @keyframes heroSignature {
 
